@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRB Residence </title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        gold: '#C5A059',
+                        dark: '#1a1a1a',
+                        denim: '#181D24',
+                    },
+                    animation: {
+                        'text-up': 'textUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        textUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'kalpurush';
+            src: url('./fonts/kalpurush.ttf') format('truetype');
+            /* .ttf hole 'truetype' likhte hoy */
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 2. Full body ba nirdishto class-e font apply kora */
+        .font-bangla {
+            font-family: 'kalpurush', sans-serif !important;
+        }
+
+        body {
+            font-family: 'Arimo';
+            background-color: #FFFFFF !important;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-content {
+            opacity: 0;
+            transition: opacity 0.5s ease-in 0.4s;
+        }
+
+        .slide.active .slide-content {
+            opacity: 1;
+            animation: textUp 1s ease-out forwards 0.4s;
+        }
+
+        #mobile-menu-overlay {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-text {
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Tablet hero text optimization */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .hero-text {
+                font-size: 3.5rem;
+                line-height: 1.2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.25rem;
+                line-height: 1.1;
+            }
+        }
+
+        /* project slider custom styles */
+
+        .slick-track {
+            display: flex !important;
+            align-items: end !important;
+            align-items: flex-end !important;
+        }
+
+        .slick-slide {
+            height: inherit !important;
+            padding: 0 10px;
+            outline: none;
+        }
+
+        .slick-list {
+            margin: 0 -10px;
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .slick-slide {
+                padding: 0 8px;
+            }
+
+            .slick-list {
+                margin: 0 -8px;
+                padding-top: 40px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .slick-slide {
+                padding: 0 5px;
+            }
+
+            .slick-list {
+                margin: 0 -5px;
+                padding-top: 30px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+
+
+        .slider-card {
+            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            transform: scale(0.8);
+            opacity: 0.5;
+            transform-origin: bottom center;
+            width: 100%;
+        }
+
+        .slick-current .slider-card {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Project Section Responsive */
+        .project-section {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .project-title-section h2 {
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .project-title-section {
+                padding: 0 1rem;
+                text-align: center;
+            }
+
+            .project-title-section h2 {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-title-section {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Custom Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding-right: 20px;
+            margin-top: 30px;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                padding-right: 0;
+                margin-top: 25px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                padding-right: 0;
+                margin-top: 20px;
+            }
+        }
+
+        /* Tablet button sizing */
+        @media (max-width: 1024px) and (min-width: 768px) {
+
+            #prevBtn,
+            #nextBtn {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-white overflow-x-hidden bg-black">
+    <!-- header section  -->
+    <main class="overflow-x-hidden">
+        <nav id="navbar"
+            class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 lg:py-5 px-6 md:px-10 lg:px-12 flex items-center justify-between  border-white/10 bg-gradient-to-b from-black/80 to-transparent">
+
+            <div class="flex flex-column tracking-[0.2em] items-start md:items-center">
+                <a href="index.html">
+                    <img src="https://i.ibb.co.com/VYwysF2j/NRB-Logo-white.png" class="h-10 md:h-14 mb-1" alt="Logo">
+                </a>
+                <!-- <span class="text-[0.45rem] tracking-[0.4em] text-white uppercase">Living in Luxury</span>  -->
+            </div>
+
+            <div
+                class="hidden md:flex relative md:absolute md:left-1/2 md:-translate-x-1/2 flex-row flex-1 md:space-x-6 lg:space-x-8 text-xs uppercase items-start md:items-center font-sans">
+
+                <!-- <a href="index.html" class="nav-link transition-colors">Home</a>
+                <a href="aboutus.html" class="nav-link transition-colors">About Us</a>
+                <a href="projects.html" class="nav-link transition-colors">Projects</a>
+                <a href="contact.html" class="nav-link transition-colors">Contact</a> -->
+
+                <a href="index.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Home
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+                <a href="aboutus.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    About Us
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+                <a href="projects.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Projects
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+                <a href="contact.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Contact
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+            </div>
+
+            <div class="flex flex-1 justify-end items-center space-x-4 md:space-x-6 lg:space-x-8">
+                <!-- <a href="contact.html"
+                    class="hidden lg:block text-xs uppercase tracking-[0.2em] transition-colors">Contact</a> -->
+
+                <button onclick="toggleMenu()"
+                    class="flex items-center space-x-2 md:space-x-3 border border-white/40 rounded-full px-4 md:px-5 py-2 hover:bg-white hover:text-black transition-all group text-[10px] md:text-[10px]">
+                    <span class="uppercase text-[10px] tracking-[0.2em] font-bold">Menu</span>
+                    <div class="w-5 flex flex-col space-y-1">
+                        <span class="h-[1px] w-full bg-current"></span>
+                        <span class="h-[1px] w-3/4 bg-current"></span>
+                    </div>
+                </button>
+
+                <!-- <button
+                class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:border-gold hover:text-gold transition-all">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </button> -->
+            </div>
+        </nav>
+
+        <div id="mobile-menu-overlay"
+            class="fixed inset-0 bg-dark/95 z-[60] transform translate-x-full flex flex-col items-center justify-center">
+            <button onclick="toggleMenu()" class="absolute top-10 right-10 text-3xl hover:text-gold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center space-y-8">
+                <a href="index.html" class="block font- text-5xl hover:text-gold ">Home</a>
+                <a href="aboutus.html" class="block font- text-5xl hover:text-gold ">About Us</a>
+                <a href="projects.html" class="block font- text-5xl hover:text-gold ">Projects</a>
+                <a href="contact.html" class="block font- text-5xl hover:text-gold ">Contact</a>
+                <a href="brochure.html" class="block font- text-5xl hover:text-gold ">Company Profile</a>
+                <a href="faq.html" class="block font- text-5xl hover:text-gold">Faq</a>
+            </div>
+        </div>
+
+        <section class="relative h-screen w-full overflow-hidden bg-black">
+            <div id="slider-wrapper" class="relative h-full w-full">
+
+                <div class="slide active w-full h-full flex items-center justify-center bg-cover bg-center"
+                    style="background-image: url('https://i.ibb.co.com/JjS6QJTf/Untitled-2-jpg.jpg');">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="slide-content relative z-10 text-center px-4">
+
+                        <div class="w-full flex items-center justify-center bg-primary py-10">
+                            <div class="text-center px-4 font-bangla">
+                                <h3
+                                    class="text-4xl sm:text-8xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                                    সর্বনিম্ন ১০ হাজার টাকা কিস্তি
+                                </h3>
+                                <p class="text-2xl sm:text-6xl md:text-4xl lg:text-5xl text-white mt-4 font-medium ">
+                                    অবশিষ্ট কিস্তি ভাড়ার টাকায় পরিশোধ করুন
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide w-full h-full flex items-center justify-center bg-cover bg-center"
+                    style="background-image: url('https://i.ibb.co.com/gM7N51vJ/Screenshot-3.png?q=80&w=2070');">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="slide-content relative z-10 text-center px-4">
+                        <!-- <h2 class="font- text-5xl md:text-8xl lg:text-[6rem] leading-tight hero-text ">
+                            ভাড়ার টাকায়<br>
+                            <span class="font-light ">নিজের ফ্লাট</span>
+                        </h2> -->
+                        <div class="w-full flex items-center justify-center bg-primary py-10">
+                            <div class="text-center px-4 font-bangla">
+                                <h3
+                                    class="text-4xl sm:text-8xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                                    ভাড়ার টাকায়
+                                </h3>
+                                <p class="text-2xl sm:text-6xl md:text-4xl lg:text-5xl text-white mt-4 font-medium">
+                                    পছন্দের ফ্ল্যাট
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide w-full h-full flex items-center justify-center bg-cover bg-center"
+                    style="background-image: url('https://i.ibb.co.com/qYVS6w8x/Gemini-Generated-Image-qt32xnqt32xnqt32.png');">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="slide-content relative z-10 text-center px-4">
+                        <!-- <h2 class="font- text-5xl md:text-8xl lg:text-[6rem] leading-tight hero-text ">
+                            স্বপ্নের ফ্ল্যাট এখন <br>
+                            <span class="font-light ">হাতের নাগালে</span>
+                        </h2> -->
+                        <div class="w-full flex items-center justify-center bg-primary py-10">
+                            <div class="text-center px-4 font-bangla">
+                                <h3
+                                    class="text-4xl sm:text-8xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                                    স্বপ্নের ফ্ল্যাট এখন
+                                </h3>
+                                <p class="text-2xl sm:text-6xl md:text-4xl lg:text-5xl text-white mt-4 font-medium">
+                                    হাতের নাগালে
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide w-full h-full flex items-center justify-center bg-cover bg-center"
+                    style="background-image: url('https://i.ibb.co.com/MD7JKgg5/Screenshot-2.png?q=80&w=2070');">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="slide-content relative z-10 text-center px-4">
+                        <div class="w-full flex items-center justify-center bg-primary py-10">
+                            <div class="text-center px-4 font-bangla">
+                                <h3
+                                    class="text-4xl sm:text-8xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                                    কিস্তিতে ৫ বছরে বুঝে নিন
+                                </h3>
+                                <p class="text-2xl sm:text-6xl md:text-4xl lg:text-5xl text-white mt-4 font-medium">
+                                    আপনার পছন্দের ফ্ল্যাট
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="absolute bottom-12 left-6 md:left-12 z-30 flex items-center space-x-6">
+                <a href="#" class="text-white hover:text-gold transition-all hover:-translate-y-1"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-gold transition-all hover:-translate-y-1"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-white hover:text-gold transition-all hover:-translate-y-1"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-white hover:text-gold transition-all hover:-translate-y-1"><i
+                        class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <div class="absolute bottom-12 right-6 md:right-12 z-30 flex items-center space-x-10">
+                <div id="dots-container" class="flex space-x-4">
+                    <button onclick="jumpToSlide(0)"
+                        class="dot w-2 h-2 rounded-full bg-white transition-all duration-300 opacity-100 scale-125 shadow-[0_0_10px_rgba(255,255,255,0.8)]"></button>
+                    <button onclick="jumpToSlide(1)"
+                        class="dot w-2 h-2 rounded-full bg-white transition-all duration-300 opacity-40 hover:opacity-100"></button>
+                    <button onclick="jumpToSlide(2)"
+                        class="dot w-2 h-2 rounded-full bg-white transition-all duration-300 opacity-40 hover:opacity-100"></button>
+                </div>
+
+                <button
+                    class="w-14 h-14 bg-gold rounded-full flex items-center justify-center text-white text-2xl shadow-2xl hover:scale-110 transition-transform active:scale-95">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- project slider section -->
+        <div class="max-w-7xl mx-auto py-12 md:py-16 lg:py-20 px-6 md:px-10 lg:px-8 project-section">
+            <div class="project-title-section">
+                <h2 class="-title text-4xl md:text-5xl lg:text-8xl text-center lg:text-left text-gold mb-3 md:mb-4">Our
+                    Touch</h2>
+                <h2
+                    class="-title text-4xl md:text-5xl lg:text-8xl text-center lg:text-left text-gold mb-4 ml-0 lg:ml-[90px]">
+                    of
+                    Excellence</h2>
+            </div>
+            <div class="nav-container">
+                <button id="prevBtn"
+                    class="w-12 h-12 rounded-full bg-gold text-white flex items-center justify-center  transition-all shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button id="nextBtn"
+                    class="w-12 h-12 rounded-full bg-gold text-white flex items-center justify-center  transition-all shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="main-slider">
+                <div>
+                    <div class="slider-card cursor-pointer">
+                        <div class="overflow-hidden rounded-sm aspect-[3/4] mb-4 md:mb-6 shadow-xl">
+                            <img src="https://i.ibb.co.com/MD7JKgg5/Screenshot-2.png"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="-title text-2xl md:text-3xl text-denim">Nrb Residence Project One</h3>
+                        <p class="text-gold text-base md:text-lg uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="slider-card cursor-pointer">
+                        <div class="overflow-hidden rounded-sm aspect-[3/4] mb-4 md:mb-6 shadow-xl">
+                            <img src="https://i.ibb.co.com/4nj0d3gs/Gemini-Generated-Image-cn12mtcn12mtcn12.png"
+                                class="w-full h-full ">
+                        </div>
+                        <h3 class="-title text-2xl md:text-3xl text-denim">Nrb Residence Project Two</h3>
+                        <p class="text-gold text-base md:text-lg uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="slider-card cursor-pointer">
+                        <div class="overflow-hidden rounded-sm aspect-[3/4] mb-4 md:mb-6 shadow-xl">
+                            <img src="https://i.ibb.co.com/QFnkk4WQ/Gemini-Generated-Image-4z5g764z5g764z5g.png"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="-title text-2xl md:text-3xl text-denim">Nrb Residence Project Three</h3>
+                        <p class="text-gold text-base md:text-lg uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="slider-card cursor-pointer">
+                        <div class="overflow-hidden rounded-sm aspect-[3/4] mb-4 md:mb-6 shadow-xl">
+                            <img src="https://i.ibb.co.com/JjS6QJTf/Untitled-2-jpg.jpg"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="-title text-2xl md:text-3xl text-denim">Nrb Residence Project Four</h3>
+                        <p class="text-gold text-base md:text-lg uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Apartment search section  -->
+        <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-10 lg:p-8 mb-12">
+
+            <div class="flex items-center justify-center gap-3 mb-8 border-b border-gray-100 pb-6">
+                <i class="fa-solid fa-calendar-days text-2xl text-gold hidden md:block"></i>
+                <h2 class="text-xl md:text-3xl lg:text-4xl font-bold text-denim uppercase tracking-wide">Find your Best
+                    Apartment
+                </h2>
+            </div>
+
+            <form id="ApartmentSearchForm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Name <span class="text-red-500">*</span></label>
+                    <input type="text" placeholder="Enter name" required
+                        class="w-full px-4 py-2.5  border border-gray-200 rounded-lg focus-ring transition-all outline-none text-gold">
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Phone Number <span
+                            class="text-red-500">*</span></label>
+                    <input type="tel" placeholder="Enter Phone Number" required
+                        class="w-full px-4 py-2.5  border border-gray-200 rounded-lg focus-ring transition-all outline-none text-gold">
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Project</label>
+                    <select
+                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer text-gold">
+                        <option value="">--Select Project--</option>
+                        <option value="p1">Green Valley</option>
+                        <option value="p2">Ocean Breeze</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Project Location</label>
+                    <select
+                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer text-gold">
+                        <option value="">--Select Project Location--</option>
+                        <option value="a">Location A</option>
+                        <option value="b">Location B</option>
+                    </select>
+                </div>
+
+                <!-- <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Location</label>
+                    <select
+                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer text-gold">
+                        <option value="">--Select Road No--</option>
+                        <option value="101">Road 101</option>
+                        <option value="102">Road 102</option>
+                    </select>
+                </div> -->
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Facing</label>
+                    <select
+                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer text-gold">
+                        <option value="">--Select Apartment Facing--</option>
+                        <option value="north">North</option>
+                        <option value="south">South</option>
+                        <option value="east">East</option>
+                        <option value="west">West</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Apartment Type</label>
+                    <select
+                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer text-gold">
+                        <option value="">--Select Apartment Type--</option>
+                        <option value="res">Residential</option>
+                        <option value="com">Commercial</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-denim">Apartment No</label>
+                    <select
+                        class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer text-gold">
+                        <option value="">--Select Apartment No--</option>
+                        <option value="1">P-01</option>
+                        <option value="2">P-02</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <button type="submit"
+                        class="w-full sm:w-auto px-8 py-3 rounded-lg font-semibold text-white transition-all transform hover:scale-105 active:scale-95 shadow-md bg-gold mt-[26px]">
+                        Search Apartment
+                    </button>
+                </div>
+
+                <!-- <div class="lg:col-span-4 flex justify-end mt-4">
+                    <button type="submit"
+                        class="w-full sm:w-auto px-8 py-3 rounded-lg font-semibold text-white transition-all transform hover:scale-105 active:scale-95 shadow-md bg-gold">
+                        SEARCH Apartment
+                    </button>
+                </div> -->
+            </form>
+        </div>
+
+
+        <!-- our projects  -->
+        <section class="bg-denim pt-20 pb-32 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-60">
+                <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=2000"
+                    alt="pattern">
+            </div>
+            <div class="relative z-10 px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">Our Masterpieces</h1>
+                <p class="text-gold tracking-[0.3em] uppercase text-sm md:text-base font-bold">Discover our premium
+                    Apartment
+                    developments</p>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
+            <div
+                class="bg-white p-4 rounded-2xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button
+                        class="px-6 py-2 rounded-full bg-gold text-white font-bold transition-all shadow-lg shadow-gold/20">All
+                        Projects</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-gray-100 text-denim hover:bg-gold hover:text-white font-bold transition-all">Ongoing</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-gray-100 text-denim hover:bg-gold hover:text-white font-bold transition-all">Completed</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-gray-100 text-denim hover:bg-gold hover:text-white font-bold transition-all">Upcoming</button>
+                </div>
+                <div class="relative w-full md:w-64">
+                    <input type="text" placeholder="Search projects..."
+                        class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:border-gold">
+                    <i class="fas fa-search absolute left-4 top-3 text-gray-400 text-sm"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div
+                    class="project-card bg-white rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://i.ibb.co.com/MD7JKgg5/Screenshot-2.png"
+                            class="w-full h-full object-cover transition-transform duration-700" alt="NRB Phase 1">
+                        <div
+                            class="absolute top-4 left-4 bg-gold text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Ongoing
+                        </div>
+                        <div
+                            class="project-overlay absolute inset-0 bg-denim/40 opacity-0 transition-opacity duration-500 flex items-center justify-center">
+                            <button
+                                class="bg-white text-denim font-bold px-6 py-2 rounded-full hover:bg-gold hover:text-white transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-extrabold mb-2 group-hover:text-gold text-black transition-colors min-h-[4rem] line-clamp-2">
+                            NRB
+                            Residence Project one</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                            <i class="fas fa-location-dot text-gold"></i> Near Purbachal, Sonargaon
+                        </p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-6">
+                            <div>
+                                <span
+                                    class="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">Apartment
+                                    Sizes</span>
+                                <span class="font-bold text-denim">1000 - 1200 Sq.Ft</span>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">Pricing</span>
+                                <span class="font-bold text-gold">৳10,000 /mo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="project-card bg-white rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://i.ibb.co.com/4nj0d3gs/Gemini-Generated-Image-cn12mtcn12mtcn12.png"
+                            class="w-full h-full object-cover transition-transform duration-700" alt="NRB Phase 2">
+                        <div
+                            class="absolute top-4 left-4 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Upcoming
+                        </div>
+                        <div
+                            class="project-overlay absolute inset-0 bg-denim/40 opacity-0 transition-opacity duration-500 flex items-center justify-center">
+                            <button
+                                class="bg-white text-denim font-bold px-6 py-2 rounded-full hover:bg-gold hover:text-white transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-extrabold mb-2 group-hover:text-gold text-black transition-colors min-h-[4rem] line-clamp-2">
+                            NRB
+                            Residence Project Two
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                            <i class="fas fa-location-dot text-gold"></i> Purbachal Express Highway
+                        </p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-6">
+                            <div>
+                                <span
+                                    class="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">Apartment
+                                    Sizes</span>
+                                <span class="font-bold text-denim">1600 - 2000 Sq.Ft</span>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">Status</span>
+                                <span class="font-bold text-blue-600 uppercase text-xs">Pre-Booking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="project-card bg-white rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://i.ibb.co.com/QFnkk4WQ/Gemini-Generated-Image-4z5g764z5g764z5g.png"
+                            class="w-full h-full object-cover transition-transform duration-700" alt="NRB Completed">
+                        <div
+                            class="absolute top-4 left-4 bg-green-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Completed
+                        </div>
+                        <div
+                            class="project-overlay absolute inset-0 bg-denim/40 opacity-0 transition-opacity duration-500 flex items-center justify-center">
+                            <button
+                                class="bg-white text-denim font-bold px-6 py-2 rounded-full hover:bg-gold hover:text-white transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-extrabold mb-2 group-hover:text-gold text-black transition-colors min-h-[4rem] line-clamp-2">
+                            NRB Residence Project Three
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-6 flex items-center gap-2">
+                            <i class="fas fa-location-dot text-gold"></i> Sonargaon, Narayanganj
+                        </p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-6">
+                            <div>
+                                <span
+                                    class="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">Apartments</span>
+                                <span class="font-bold text-denim">Sold Out</span>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="block text-[10px] text-gray-400 uppercase font-bold tracking-widest">Handover</span>
+                                <span class="font-bold text-green-600">Done 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- video section  -->
+        <section class="relative py-16 bg-gray-950 overflow-hidden">
+        
+            <div class="container mx-auto px-6 mb-12 text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+                    Our Project Video
+                </h2>
+                <div class="h-1 w-24 bg-gold mx-auto mt-4 rounded-full opacity-80"></div>
+            </div>
+        
+            <div class="relative max-w-7xl mx-auto px-4 md:px-0">
+                <div
+                    class="relative aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 group">
+        
+                    <iframe
+                        class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
+                        src="https://www.youtube.com/embed/Jqfn0YL477M?autoplay=1&mute=1&controls=0&loop=1&playlist=Jqfn0YL477M&showinfo=0&rel=0&modestbranding=1"
+                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+                    </iframe>
+        
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+        
+                    <!-- <div
+                        class="absolute bottom-6 left-6 z-20 flex items-center gap-4 bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                        <div class="w-12 h-12 flex items-center justify-center bg-yellow-500 rounded-full animate-pulse">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            </svg>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        
+        </section>
+
+
+        <!-- looking for section  -->
+        <section class="bg-gold/10 py-20 mt-10">
+            <div class="max-w-4xl mx-auto text-center px-6">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gold mb-6">Didn't find what you're looking for?</h2>
+                <p class="text-lg text-slate-600 mb-8">Tell us your requirements, and we will find the perfect Apartment
+                    for
+                    your
+                    dream home.</p>
+                <a href="#"
+                    class="inline-block bg-denim text-white font-bold py-4 px-10 rounded-full hover:bg-gold transition-all shadow-xl">
+                    Get Personalized Assistance
+                </a>
+            </div>
+        </section>
+
+
+        <!-- At A Glance section  -->
+        <section class="relative overflow-hidden py-12 px-2">
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style="background-image: radial-gradient(#9F8A76 1px, transparent 1px); background-size: 30px 30px;">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+
+                <div class="text-center mb-24">
+                    <div class="inline-flex items-center justify-center gap-3 mb-4 group cursor-default">
+                        <span class="h-px w-8 bg-gold"></span>
+                        <span class="text-gold font-bold uppercase tracking-[0.3em] text-lg">At A Glance</span>
+                        <span class="h-px w-8 bg-gold"></span>
+                    </div>
+                    <h2 class="text-4xl md:text-4xl font-black text-denim tracking-tight mb-4">
+                        KEY <span class="text-denim">BENEFITS FACILITIES</span>
+                    </h2>
+                    <div class="w-24 h-1.5 bg-gold mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20">
+
+                    <div
+                        class="group relative bg-denim rounded-2xl p-8 pt-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(159,138,118,0.3)] hover:-translate-y-3">
+                        <div
+                            class="absolute -top-10 left-8 w-20 h-20 rounded-2xl flex items-center justify-center border-4 border-white rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-xl overflow-hidden bg-gold">
+                            <i class="fa-solid fa-house text-3xl text-white"></i>
+                            <div
+                                class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3
+                                class="text-2xl font-bold text-white group-hover:text-gold transition-colors min-h-[4rem] line-clamp-2">
+                                Annual Rental Income
+                            </h3>
+                            <p class="text-gray-200 text-justify leading-relaxed text-sm">
+                                Investors have the potential to receive rental income for up to ten months annually.
+                            </p>
+                            <div class="w-0 group-hover:w-full h-0.5 bg-gold transition-all duration-500 opacity-50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative bg-denim rounded-2xl p-8 pt-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(159,138,118,0.3)] hover:-translate-y-3">
+                        <div
+                            class="absolute -top-10 left-8 w-20 h-20 rounded-2xl flex items-center justify-center border-4 border-white rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-xl bg-gold">
+                            <i class="fa-solid fa-building text-3xl text-white"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h3
+                                class="text-2xl font-bold text-white group-hover:text-gold transition-colors min-h-[4rem] line-clamp-2">
+                                Complimentary Family Holidays</h3>
+                            <p class="text-gray-200 leading-relaxed text-justify text-sm">Enjoy four nights and five
+                                days of compimentary family holiday accommodation each year</p>
+                            <div class="w-0 group-hover:w-full h-0.5 bg-gold transition-all duration-500 opacity-50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative bg-denim rounded-2xl p-8 pt-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(159,138,118,0.3)] hover:-translate-y-3">
+                        <div
+                            class="absolute -top-10 left-8 w-20 h-20 rounded-2xl flex items-center justify-center border-4 border-white rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-xl bg-gold">
+                            <i class="fa-solid fa-city text-3xl text-white"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h3
+                                class="text-2xl font-bold text-white group-hover:text-gold transition-colors min-h-[4rem] line-clamp-2">
+                                Flexible Installments</h3>
+                            <p class="text-gray-200 leading-relaxed text-justify text-sm">A flexible installment
+                                facility is available, ranging from 12 to 24 months.</p>
+                            <div class="w-0 group-hover:w-full h-0.5 bg-gold transition-all duration-500 opacity-50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative bg-denim rounded-2xl p-8 pt-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(159,138,118,0.3)] hover:-translate-y-3">
+                        <div
+                            class="absolute -top-10 left-8 w-20 h-20 rounded-2xl flex items-center justify-center border-4 border-white rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-xl bg-gold">
+                            <i class="fa-solid fa-mountain-sun text-3xl text-white"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h3
+                                class="text-2xl font-bold text-white group-hover:text-gold transition-colors min-h-[4rem] line-clamp-2">
+                                Flexible Exit
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed text-justify text-sm">Investors retain the
+                                flexibility to sell their shartes and 6 months of booking.</p>
+                            <div class="w-0 group-hover:w-full h-0.5 bg-gold transition-all duration-500 opacity-50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative bg-denim rounded-2xl p-8 pt-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(159,138,118,0.3)] hover:-translate-y-3">
+                        <div
+                            class="absolute -top-10 left-8 w-20 h-20 rounded-2xl flex items-center justify-center border-4 border-white rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-xl bg-gold">
+                            <i class="fa-solid fa-tree-city text-3xl text-white"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h3
+                                class="text-2xl font-bold text-white group-hover:text-gold transition-colors min-h-[4rem] line-clamp-2">
+                                Global Access </h3>
+                            <p class="text-gray-200 leading-relaxed text-justify text-sm">Convenient worldwide bank
+                                transfer facilities are available to streamline your investment experience.</p>
+                            <div class="w-0 group-hover:w-full h-0.5 bg-gold transition-all duration-500 opacity-50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="group relative bg-denim rounded-2xl p-8 pt-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(159,138,118,0.3)] hover:-translate-y-3">
+                        <div
+                            class="absolute -top-10 left-8 w-20 h-20 rounded-2xl flex items-center justify-center border-4 border-white rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-xl bg-gold">
+                            <i class="fa-solid fa-mountain-sun text-3xl text-white"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h3
+                                class="text-2xl font-bold text-white group-hover:text-gold transition-colors max-h-[4rem] line-clamp-2">
+                                Premium Residential Facilities
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed text-justify text-sm">Gated community with 24/7
+                                security, dedicated private parking for each house/villa, and modern utilities.</p>
+                            <div class="w-0 group-hover:w-full h-0.5 bg-gold transition-all duration-500 opacity-50">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WHY NRB RESIDENCE -->
+        <section class="py-12 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">WHY <span class="text-gold">NRB
+                        RESIDENCE</span></h2>
+                <p class="text-denim mt-2">Find your dream Apartment from our Recent added properties.</p>
+            </div>
+
+            <div
+                class="bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                    <i class="fa-solid fa-key text-4xl text-gold mb-6"></i>
+                    <h4 class="font-bold text-gold text-xl mb-3">Guaranteed Possession</h4>
+                    <p class="text-lg text-denim">Handover guaranteed within 5 years for your 2BHK urban apartment</p>
+                </div>
+                <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                    <i class="fa-solid fa-handshake text-4xl text-gold mb-6"></i>
+                    <h4 class="font-bold text-gold text-xl mb-3">Trusted NRB Brand</h4>
+                    <p class="text-lg text-denim">The definitive answer for diaspora capital, built on transparency and
+                        trust</p>
+                </div>
+                <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                    <i class="fa-solid fa-wallet text-4xl text-gold mb-6"></i>
+                    <h4 class="font-bold text-gold text-xl mb-3">High-Yield Returns</h4>
+                    <p class="text-lg text-denim">Turn your remittance into a tangible asset with sustainable rental
+                        income.</p>
+                </div>
+                <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                    <i class="fa-solid fa-headset text-4xl text-gold mb-6"></i>
+                    <h4 class="font-bold text-gold text-xl mb-3">The Global Bridge</h4>
+                    <p class="text-lg text-denim">We provide 24/7 support to connect your investment with secure Dhaka
+                        real estate.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-12">
+                <button
+                    class="px-10 py-4 bg-gold text-white font-bold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all">
+                    VIEW MORE PROPERTIES
+                </button>
+            </div>
+        </section>
+
+        <!-- mission vision  -->
+        <section class="bg-slate-50 py-16 px-6 md:py-24">
+            <div class="max-w-6xl mx-auto">
+
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#C5A059] mb-4 uppercase tracking-widest">Our Purpose
+                    </h2>
+                    <div class="h-1 w-20 bg-[#C5A059] mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div
+                        class="group bg-[#181D24] p-8 md:p-12 rounded-2xl border border-gray-800 hover:border-[#C5A059] transition-all duration-300 shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="p-3 bg-[#C5A059]/10 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#C5A059]" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white">Our Mission</h3>
+                        </div>
+                        <p class="text-gray-200 text-justify leading-relaxed ">
+                            Our mission is to make premium holiday home ownership accessible through transparent and
+                            flexible co-ownership and timeshare solutions. We are comitted to "Crafting Timeless Assets,
+                            Not Just Homes', ensuring your investment aerves as a benchmark for luxury and long-term
+                            value.
+                        </p>
+                    </div>
+
+                    <div
+                        class="group bg-[#181D24] p-8 md:p-12 rounded-2xl border border-gray-800 hover:border-[#C5A059] transition-all duration-300 shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <div class="p-3 bg-[#C5A059]/10 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#C5A059]" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white">Our Vision</h3>
+                        </div>
+                        <p class="text-gray-200 text-justify leading-relaxed">
+                            To become the global benchmark for excellence in our industry. We envision a future where
+                            our strategic insights and creative execution set the standard for quality, integrity, and
+                            lasting impact.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Apartment download section  -->
+        <section
+            class="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+
+            <div class="absolute inset-0 z-0">
+                <img src="https://i.ibb.co.com/MD7JKgg5/Screenshot-2.png" alt="Apartment Apartmentscape"
+                    class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+
+            <div
+                class="relative z-10 max-w-4xl w-full bg-white/95 backdrop-blur-sm shadow-2xl rounded-3xl overflow-hidden flex flex-col md:flex-row">
+
+                <div class="md:w-1/3 bg-gold p-8 text-white flex flex-col justify-center items-center text-center">
+                    <span class="text-sm uppercase tracking-widest opacity-80 mb-2">Starting From</span>
+                    <div class="text-4xl font-bold mb-2">৳ 10,000<span class="text-lg font-normal">/mo</span></div>
+                    <div class="h-1 w-12 bg-white/30 my-4"></div>
+                    <p class="text-sm italic opacity-90">Secure your future home with easy installments.</p>
+                </div>
+
+                <div class="md:w-2/3 p-8 md:p-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6 leading-tight">
+                        Book Your <span class="text-denim">Apartment Now!</span>
+                    </h2>
+
+                    <p class="text-denim leading-relaxed mb-8">
+                        Don't miss out on the chance to own a piece of natural beauty at
+                        <span class="font-semibold">NRB Residence</span>. Just 20 minutes from Rajuk Purbachal
+                        and 5 minutes from Sonargaon tourist town via Purbachal Express Highway.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#"
+                            class="hover:-translate-y-1 flex items-center justify-center gap-2 bg-gold text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-gray-400/20 hover:opacity-90 transition-all">
+                            <i class="fas fa-file-download"></i>
+                            Download Form
+                        </a>
+
+                        <a href="#"
+                            class="hover:-translate-y-1 flex items-center justify-center gap-2 border-2 border-gold text-denim px-6 py-4 rounded-xl font-bold hover:bg-gold hover:text-white transition-all">
+                            <i class="fas fa-map-marked-alt"></i>
+                            Download Brochure
+                        </a>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-gray-100 flex items-center gap-6">
+                        <div class="flex items-center text-xs text-gray-400">
+                            <i class="fas fa-shield-alt text-denim mr-2"></i> <span class="text-denim">100% Authorized
+                                Apartment</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-400">
+                            <i class="fas fa-clock text-denim mr-2"></i> <span class="text-denim">Limited
+                                Availability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- footer section  -->
+        <footer class="bg-white text-black pt-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                    <div class="space-y-6">
+                        <!-- <div class="bg-white p-3 rounded-lg inline-block shadow-xl shadow-black/20">
+                            <img src="https://demo.nrbresidence.com/assets/web/images/nrb-residence-new-logo.png"
+                                alt="NRB Logo" class="h-10">
+                        </div> -->
+                        <h4 class="text-xl font-bold tracking-tight text-gold">Office Location</h4>
+                        <div class="space-y-4 text-sm text-black">
+                            <p class="leading-relaxed flex gap-3">
+                                <i class="fas fa-location-dot  mt-1"></i>
+                                <span class="">Level-12, Ahmed Tower, 28 & 30, Kemal Ataturk
+                                    Avenue, Banani, Dhaka-1213</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fas fa-phone "></i>
+                                <span class="">+8802222275895</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fas fa-envelope "></i>
+                                <span class="">info@nrbresidence.com</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-8 relative text-gold">
+                            Navigation
+                            <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                        </h4>
+                        <ul class="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+                            <li><a href="#" class="footer-link"></i> Home</a>
+                            </li>
+                            <li><a href="#" class="footer-link"></i>
+                                    Brochure</a></li>
+                            <li><a href="#" class="footer-link"></i> About
+                                    Us</a></li>
+                            <li><a href="#" class="footer-link"></i> How to
+                                    Buy</a></li>
+                            <li><a href="#" class="footer-link"></i> Why NRB</a>
+                            </li>
+                            <li><a href="#" class="footer-link"></i> FAQ's</a>
+                            </li>
+                            <li><a href="#" class="footer-link"></i>
+                                    Projects</a></li>
+                            <li><a href="#" class="footer-link"></i> Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-8 relative text-gold">
+                            Our Offices
+                            <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="office-card group">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <i class="fas fa-building text-primary"></i>
+                                    <span class="font-semibold ">Corporate Office</span>
+                                </div>
+                                <p class="text-xs  pl-7">Kemal Ataturk Avenue, Banani, Dhaka-1213.</p>
+                            </div>
+                            <div class="office-card group">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <i class="fas fa-house-chimney text-primary"></i>
+                                    <span class="font-semibold ">Branch Office</span>
+                                </div>
+                                <p class="text-xs  pl-7">Block-E, Banani, Dhaka-1213.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-8 relative text-gold">
+                            Newsletter
+                            <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                        </h4>
+                        <p class="text-xs  mb-6 leading-relaxed">Subscribe to get latest updates on Apartment
+                            availability and pricing.</p>
+                        <form class="space-y-3">
+                            <input type="email" placeholder="Enter Your Email"
+                                class="w-full text-gold border border-slate-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all">
+                            <button type="submit"
+                                class="w-full bg-gold text-white font-bold py-3 rounded-lg text-xs uppercase tracking-widest shadow-lg transition-all active:scale-95">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div
+                    class="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-xs ">
+                        2026 &copy; <span class="">NRB Residence</span>. All Rights Reserved | Developed
+                        by <a href="#" class="text-sky-500 font-bold hover:underline">Techsolutions</a>
+                    </p>
+
+                    <div class="flex items-center gap-3">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-facebook-f text-white hover:text-black text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in text-white hover:text-black text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-youtube text-white hover:text-black text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+
+    <!-- project slider script  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.main-slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: false,
+                cssEase: 'cubic-bezier(0.2, 1, 0.3, 1)',
+                speed: 1000,
+                // --- Auto Play Settings ---
+                autoplay: true,
+                autoplaySpeed: 800,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: { slidesToShow: 3 }
+                    },
+                    {
+                        breakpoint: 1024,
+                        settings: { slidesToShow: 2.3, centerMode: false }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: { slidesToShow: 1.6, centerMode: false }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: { slidesToShow: 1, centerMode: false, centerPadding: '0px' }
+                    },
+                    {
+                        breakpoint: 375,
+                        settings: {
+                            slidesToShow: 1, centerMode: false, centerPadding: '0px'
+                        }
+                    }
+                ]
+            });
+
+            $('#nextBtn').click(function () { $('.main-slider').slick('slickNext'); });
+            $('#prevBtn').click(function () { $('.main-slider').slick('slickPrev'); });
+        });
+    </script>
+
+
+    <script>
+        // Get current page URL
+        const activePage = window.location.pathname;
+
+        document.querySelectorAll('#navbar a').forEach(link => {
+            // If the link's href matches the current URL
+            if (link.href.includes(`${activePage}`)) {
+                link.classList.add('text-white', 'border-b-2', 'border-white', 'pb-1');
+            } else {
+                link.classList.add('text-white', 'hover:text-none');
+            }
+        });
+    </script>
+
+    <script>
+        // --- NAVBAR STICKY LOGIC ---
+        const navbar = document.getElementById('navbar');
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 50) {
+        //         navbar.classList.add('bg-gold/90', 'py-10', 'shadow-2xl');
+        //         navbar.classList.remove('py-10', 'bg-gradient-to-b');
+        //     } else {
+        //         navbar.classList.remove('bg-gold/90', 'py-10', 'shadow-2xl');
+        //         navbar.classList.add('py-10', 'bg-gradient-to-b');
+        //     }
+        // });
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Sticky mode: maintain consistent padding and background
+                navbar.classList.add('bg-gold/95', 'shadow-2xl');
+                navbar.classList.remove('bg-gradient-to-b', 'from-black/80', 'to-transparent');
+            } else {
+                // Normal mode: restore original gradient
+                navbar.classList.remove('bg-gold/95', 'shadow-2xl');
+                navbar.classList.add('bg-gradient-to-b', 'from-black/80', 'to-transparent');
+            }
+        });
+        // --- SLIDER LOGIC ---
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentIdx = 0;
+        let isTransitioning = false;
+        const intervalTime = 5000;
+        let slideTimer;
+
+        function updateSlides(targetIdx) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i < targetIdx) {
+                    slide.style.transform = 'translateX(-100%)';
+                } else if (i > targetIdx) {
+                    slide.style.transform = 'translateX(100%)';
+                } else {
+                    slide.style.transform = 'translateX(0)';
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('opacity-100', i === targetIdx);
+                dot.classList.toggle('scale-125', i === targetIdx);
+                dot.classList.toggle('opacity-40', i !== targetIdx);
+                dot.classList.toggle('shadow-[0_0_10px_rgba(255,255,255,0.8)]', i === targetIdx);
+            });
+
+            currentIdx = targetIdx;
+            setTimeout(() => { isTransitioning = false; }, 800);
+        }
+
+        function nextSlide() {
+            let next = (currentIdx + 1) % slides.length;
+            updateSlides(next);
+        }
+
+        function jumpToSlide(idx) {
+            clearInterval(slideTimer);
+            updateSlides(idx);
+            startAutoPlay();
+        }
+
+        function startAutoPlay() {
+            slideTimer = setInterval(nextSlide, intervalTime);
+        }
+
+        // --- MENU TOGGLE ---
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+        function toggleMenu() {
+            menuOverlay.classList.toggle('translate-x-full');
+        }
+
+        // Initialize positions
+        slides.forEach((slide, i) => {
+            if (i > 0) slide.style.transform = 'translateX(100%)';
+        });
+        startAutoPlay();
+    </script>
+</body>
+
+</html>

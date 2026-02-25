@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom styles for elements Tailwind can't easily target like focus states on specific hex colors */
+        .focus-ring:focus {
+            outline: 2px solid #9F8A76;
+            outline-offset: 1px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 py-10 px-4">
+
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+
+        <div class="flex items-center justify-center gap-3 mb-8 border-b border-gray-100 pb-6">
+            <i class="fa-solid fa-calendar-days text-2xl" style="color: #9F8A76;"></i>
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 uppercase tracking-wide">Find your Best Apartment</h2>
+        </div>
+
+        <form id="ApartmentSearchForm" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Name <span class="text-red-500">*</span></label>
+                <input type="text" placeholder="Enter name" required
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none">
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Phone Number <span
+                        class="text-red-500">*</span></label>
+                <input type="tel" placeholder="Enter Phone Number" required
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none">
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Project</label>
+                <select
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer">
+                    <option value="">--Select Project--</option>
+                    <option value="p1">Green Valley</option>
+                    <option value="p2">Ocean Breeze</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Block</label>
+                <select
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer">
+                    <option value="">--Select Block--</option>
+                    <option value="a">Block A</option>
+                    <option value="b">Block B</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Road</label>
+                <select
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer">
+                    <option value="">--Select Road No--</option>
+                    <option value="101">Road 101</option>
+                    <option value="102">Road 102</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Facing</label>
+                <select
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer">
+                    <option value="">--Select Apartment Facing--</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="east">East</option>
+                    <option value="west">West</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Apartment Type</label>
+                <select
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer">
+                    <option value="">--Select Apartment Type--</option>
+                    <option value="res">Residential</option>
+                    <option value="com">Commercial</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-sm font-semibold text-gray-700">Apartment No</label>
+                <select
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus-ring transition-all outline-none appearance-none cursor-pointer">
+                    <option value="">--Select Apartment No--</option>
+                    <option value="1">P-01</option>
+                    <option value="2">P-02</option>
+                </select>
+            </div>
+
+            <div class="lg:col-span-4 flex justify-end mt-4">
+                <button type="submit"
+                    class="w-full sm:w-auto px-8 py-3 rounded-lg font-bold text-white transition-all transform hover:scale-105 active:scale-95 shadow-md"
+                    style="background-color: #9F8A76;">
+                    SEARCH Apartment
+                </button>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        document.getElementById('ApartmentSearchForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Collect Form Data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            console.log('Searching for Apartment with data:', data);
+
+            // Add your search logic here (e.g., fetch API)
+            alert('Search initiated! Check the console for data.');
+        });
+    </script>
+
+</body>
+
+</html>

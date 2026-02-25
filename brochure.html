@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile & Brochure | NRB Residence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/oregon-ldo" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C5A059',
+                        denim: '#0F172A',
+                        sand: '#9F8A76',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Oregon LDO', sans-serif;
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 1px #C5A059;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-denim">
+
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=2000"
+            class="absolute inset-0 w-full h-full object-cover" alt="NRB Residence Apartmentscape">
+        <div class="absolute inset-0 bg-denim/60"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-4">Company Profile</h1>
+            <p class="text-gold text-xl md:text-2xl tracking-[0.3em] uppercase">Building Your Future Legacy</p>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 -mt-16 relative z-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white shadow-2xl p-8 rounded-2xl border-b-4 border-gold">
+            <div class="text-center">
+                <p class="text-gold text-3xl font-bold mb-1">20m</p>
+                <p class="text-xs uppercase tracking-widest font-bold">From Purbachal</p>
+            </div>
+            <div class="text-center border-l border-gray-100">
+                <p class="text-gold text-3xl font-bold mb-1">100%</p>
+                <p class="text-xs uppercase tracking-widest font-bold">Authorized</p>
+            </div>
+            <div class="text-center border-l border-gray-100">
+                <p class="text-gold text-3xl font-bold mb-1">24/7</p>
+                <p class="text-xs uppercase tracking-widest font-bold">Security</p>
+            </div>
+            <div class="text-center border-l border-gray-100">
+                <p class="text-gold text-3xl font-bold mb-1">0%</p>
+                <p class="text-xs uppercase tracking-widest font-bold">Pollution Zone</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+            <div>
+                <h2 class="text-gold text-sm font-bold tracking-[0.4em] uppercase mb-4 italic">The Vision</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Excellence in Modern <br><span
+                        class="text-outline">Real Estate</span></h3>
+                <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                    NRB Residence is more than just a housing project; it is a meticulously planned community designed
+                    for those who seek a balance between natural serenity and urban convenience.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Our team brings decades of experience in Apartment development, ensuring that every Apartment is ready for
+                    construction with proper drainage, wide roads, and legal transparency.
+                </p>
+            </div>
+            <div class="">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800"
+                    class="rounded-3xl shadow-2xl relative z-10" alt="House rendering">
+                
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16 items-center flex-row-reverse">
+            <div class="order-2 md:order-1">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80"
+                    class="rounded-3xl shadow-2xl" alt="Road Infrastructure">
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-gold text-sm font-bold tracking-[0.4em] uppercase mb-4 italic">The Infrastructure</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Masterfully Planned <br>Facilities
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <i class="fas fa-check-circle text-gold mt-1"></i>
+                        <span><strong>Wide Internal Roads:</strong> 30ft to 60ft wide roads for smooth traffic.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fas fa-check-circle text-gold mt-1"></i>
+                        <span><strong>Green Spaces:</strong> Dedicated parks and playground areas for families.</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fas fa-check-circle text-gold mt-1"></i>
+                        <span><strong>Smart Drainage:</strong> Modern underground sewage and water management.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-denim py-20">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-block p-4 bg-gold/10 rounded-full mb-6">
+                <i class="fas fa-file-pdf text-gold text-5xl"></i>
+            </div>
+            <h2 class="text-white text-4xl font-extrabold mb-4">Want the Full Details?</h2>
+            <p class="text-slate-400 mb-10 max-w-2xl mx-auto">Download our comprehensive brochure to see the full master
+                plan, installment details, and future development maps.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#"
+                    class="bg-gold hover:bg-white hover:text-denim text-white font-bold py-5 px-10 rounded-full transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fas fa-download"></i>
+                    Download PDF Brochure
+                </a>
+                <a href="#"
+                    class="border-2 border-gold text-gold hover:bg-gold hover:text-white font-bold py-5 px-10 rounded-full transition-all duration-300">
+                    Request Site Visit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h4 class="text-denim font-bold text-xl">NRB Residence</h4>
+                <p class="text-slate-400 text-sm">Empowering NRBs to own their homeApartment.</p>
+            </div>
+            <div class="flex gap-12">
+                <div class="text-center">
+                    <p class="text-xs uppercase font-bold text-gold">Founded</p>
+                    <p class="text-denim font-bold">2018</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-xs uppercase font-bold text-gold">Apartments Sold</p>
+                    <p class="text-denim font-bold">1,200+</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-xs uppercase font-bold text-gold">Status</p>
+                    <p class="text-denim font-bold">Ongoing</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

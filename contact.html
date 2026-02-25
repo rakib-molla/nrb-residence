@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NRB Residence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/oregon-ldo" rel="stylesheet">
+    <!-- <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C5A059',
+                        denim: '#181D24',
+                    }
+                }
+            }
+        }
+    </script> -->
+    <style>
+        body {
+            font-family: 'Oregon LDO';
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        gold: '#C5A059',
+                        dark: '#1a1a1a',
+                        denim: '#181D24',
+                    },
+                    animation: {
+                        'text-up': 'textUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        textUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'kalpurush';
+            src: url('./fonts/kalpurush.ttf') format('truetype');
+            /* .ttf hole 'truetype' likhte hoy */
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 2. Full body ba nirdishto class-e font apply kora */
+        .font-bangla {
+            font-family: 'kalpurush', sans-serif !important;
+        }
+
+        body {
+            font-family: 'Arimo';
+            background-color: #FFFFFF !important;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-content {
+            opacity: 0;
+            transition: opacity 0.5s ease-in 0.4s;
+        }
+
+        .slide.active .slide-content {
+            opacity: 1;
+            animation: textUp 1s ease-out forwards 0.4s;
+        }
+
+        #mobile-menu-overlay {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-text {
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Tablet hero text optimization */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .hero-text {
+                font-size: 3.5rem;
+                line-height: 1.2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.25rem;
+                line-height: 1.1;
+            }
+        }
+
+        /* project slider custom styles */
+
+        .slick-track {
+            display: flex !important;
+            align-items: end !important;
+            align-items: flex-end !important;
+        }
+
+        .slick-slide {
+            height: inherit !important;
+            padding: 0 10px;
+            outline: none;
+        }
+
+        .slick-list {
+            margin: 0 -10px;
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .slick-slide {
+                padding: 0 8px;
+            }
+
+            .slick-list {
+                margin: 0 -8px;
+                padding-top: 40px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .slick-slide {
+                padding: 0 5px;
+            }
+
+            .slick-list {
+                margin: 0 -5px;
+                padding-top: 30px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+
+
+        .slider-card {
+            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            transform: scale(0.8);
+            opacity: 0.5;
+            transform-origin: bottom center;
+            width: 100%;
+        }
+
+        .slick-current .slider-card {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Project Section Responsive */
+        .project-section {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .project-title-section h2 {
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .project-title-section {
+                padding: 0 1rem;
+                text-align: center;
+            }
+
+            .project-title-section h2 {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-title-section {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Custom Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding-right: 20px;
+            margin-top: 30px;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                padding-right: 0;
+                margin-top: 25px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                padding-right: 0;
+                margin-top: 20px;
+            }
+        }
+
+        /* Tablet button sizing */
+        @media (max-width: 1024px) and (min-width: 768px) {
+
+            #prevBtn,
+            #nextBtn {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 lg:py-5 px-6 md:px-10 lg:px-12 flex items-center justify-between  border-white/10 bg-gradient-to-b from-black/80 to-transparent">
+
+        <div class="flex flex-column tracking-[0.2em] items-start md:items-center">
+            <a href="index.html">
+                <img src="https://i.ibb.co.com/VYwysF2j/NRB-Logo-white.png" class="h-10 md:h-14 mb-1" alt="Logo">
+            </a>
+            <!-- <span class="text-[0.45rem] tracking-[0.4em] text-white uppercase">Living in Luxury</span>  -->
+        </div>
+
+        <div
+            class="hidden md:flex relative md:absolute md:left-1/2 md:-translate-x-1/2 flex-row flex-1 md:space-x-6 lg:space-x-8 text-xs uppercase items-start md:items-center font-sans">
+
+            <!-- <a href="index.html" class="nav-link transition-colors">Home</a>
+                <a href="aboutus.html" class="nav-link transition-colors">About Us</a>
+                <a href="projects.html" class="nav-link transition-colors">Projects</a>
+                <a href="contact.html" class="nav-link transition-colors">Contact</a> -->
+
+            <a href="index.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                Home
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full group-[.active]:w-full"></span>
+            </a>
+
+            <a href="aboutus.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                About Us
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full group-[.active]:w-full"></span>
+            </a>
+
+            <a href="projects.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                Projects
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full group-[.active]:w-full"></span>
+            </a>
+
+            <a href="contact.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                Contact
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full group-[.active]:w-full"></span>
+            </a>
+
+        </div>
+
+        <div class="flex flex-1 justify-end items-center space-x-4 md:space-x-6 lg:space-x-8">
+            <!-- <a href="contact.html"
+                    class="hidden lg:block text-xs uppercase tracking-[0.2em] transition-colors">Contact</a> -->
+
+            <button onclick="toggleMenu()"
+                class="flex items-center space-x-2 md:space-x-3 border border-white/40 rounded-full px-4 md:px-5 py-2 hover:bg-white hover:text-black transition-all group text-[10px] md:text-[10px]">
+                <span class="uppercase text-[10px] tracking-[0.2em] font-bold text-white">Menu</span>
+                <div class="w-5 flex flex-col space-y-1 text-white">
+                    <span class="h-[1px] w-full bg-current"></span>
+                    <span class="h-[1px] w-3/4 bg-current"></span>
+                </div>
+            </button>
+
+            <!-- <button
+                class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:border-gold hover:text-gold transition-all">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </button> -->
+        </div>
+    </nav>
+
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-dark/95 z-[60] transform translate-x-full flex flex-col items-center justify-center">
+        <button onclick="toggleMenu()" class="absolute top-10 right-10 text-3xl hover:text-gold">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="text-center space-y-8">
+            <a href="index.html" class="block font- text-5xl hover:text-gold ">Home</a>
+            <a href="aboutus.html" class="block font- text-5xl hover:text-gold ">About Us</a>
+            <a href="projects.html" class="block font- text-5xl hover:text-gold ">Projects</a>
+            <a href="contact.html" class="block font- text-5xl hover:text-gold ">Contact</a>
+            <a href="brochure.html" class="block font- text-5xl hover:text-gold ">Company Profile</a>
+            <a href="faq.html" class="block font- text-5xl hover:text-gold">Faq</a>
+        </div>
+    </div>
+
+    <section class="py-20 mt-12 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://www.transparenttextures.com/patterns/cubes.png" alt="pattern">
+        </div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-denim mb-4">Contact <span class="text-gold">Us</span>
+            </h1>
+            <p class="text-denim max-w-lg mx-auto px-4">Have questions about NRB Residence? Our team is here to help
+                you find your dream Apartment.</p>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 -mt-10 mb-20 relative z-20">
+        <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+
+            <div class="lg:w-2/5 bg-gold p-8 md:p-12 text-white flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl text-white font-bold mb-8">Contact Information</h2>
+                    <p class="text-white mb-10">Fill out the form and our team will get back to you within 24 hours.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-xl">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Call Us</h4>
+                                <p class="text-white/70 text-sm">+880 1321120392</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email Us</h4>
+                                <p class="text-white/70 text-sm">info@nrbresidence.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-xl">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Visit Us</h4>
+                                <p class="text-white/70 text-sm">Shanta Western Tower, Tejgaon I/A, Dhaka.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 bg-white/10 hover:bg-white hover:text-denim rounded-full flex items-center justify-center transition-all"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white/10 hover:bg-white hover:text-denim rounded-full flex items-center justify-center transition-all"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white/10 hover:bg-white hover:text-denim rounded-full flex items-center justify-center transition-all"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="lg:w-3/5 p-8 md:p-12 bg-white">
+                <form action="#" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-denim">First Name</label>
+                            <input type="text" placeholder="John"
+                                class="w-full px-4 py-2.5  border border-gray-200 rounded-lg focus-ring transition-all outline-none text-gold">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-denim">Last Name</label>
+                            <input type="text" placeholder="Doe"
+                                class="w-full px-4 py-2.5  border border-gray-200 rounded-lg focus-ring transition-all outline-none text-gold">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-denim">Email Address</label>
+                        <input type="email" placeholder="example@gmail.com"
+                            class="w-full px-4 py-2.5  border border-gray-200 rounded-lg focus-ring transition-all outline-none text-gold">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-denim">Subject</label>
+                        <select
+                            class="w-full px-4 py-2.5  border border-gray-200 rounded-lg focus-ring transition-all outline-none text-gold">
+                            <option>Apartment Inquiry</option>
+                            <option>Pricing & Installments</option>
+                            <option>Site Visit Request</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-denim">Your Message</label>
+                        <textarea rows="4" placeholder="How can we help you?"
+                            class="w-full px-4 py-2.5  border border-gray-200 rounded-lg focus-ring transition-all outline-none text-gold"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-denim hover:bg-gold text-white font-bold py-4 rounded-xl shadow-lg shadow-denim/30 transition-all transform active:scale-[0.98]">
+                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 mb-20">
+        <div class="rounded-[2rem] overflow-hidden shadow-xl border border-gray-200 h-[400px] relative">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.13524869274!2d90.3951167!3d23.7781741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c76e256e2971%3A0x6331a98292850935!2sShanta%20Western%20Tower!5e0!3m2!1sen!2sbd!4v1690000000000!5m2!1sen!2sbd"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- footer section  -->
+    <footer class="bg-white text-black pt-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <div class="space-y-6">
+                    <!-- <div class="bg-white p-3 rounded-lg inline-block shadow-xl shadow-black/20">
+                            <img src="https://demo.nrbresidence.com/assets/web/images/nrb-residence-new-logo.png"
+                                alt="NRB Logo" class="h-10">
+                        </div> -->
+                    <h4 class="text-xl font-bold tracking-tight text-gold">Office Location</h4>
+                    <div class="space-y-4 text-sm text-black">
+                        <p class="leading-relaxed flex gap-3">
+                            <i class="fas fa-location-dot  mt-1"></i>
+                            <span class="">Level-12, Ahmed Tower, 28 & 30, Kemal Ataturk
+                                Avenue, Banani, Dhaka-1213</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-phone "></i>
+                            <span class="">+8802222275895</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-envelope "></i>
+                            <span class="">info@nrbresidence.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 relative text-gold">
+                        Navigation
+                        <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                    </h4>
+                    <ul class="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+                        <li><a href="#" class="footer-link"></i> Home</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i>
+                                Brochure</a></li>
+                        <li><a href="#" class="footer-link"></i> About
+                                Us</a></li>
+                        <li><a href="#" class="footer-link"></i> How to
+                                Buy</a></li>
+                        <li><a href="#" class="footer-link"></i> Why NRB</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i> FAQ's</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i>
+                                Projects</a></li>
+                        <li><a href="#" class="footer-link"></i> Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 relative text-gold">
+                        Our Offices
+                        <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                    </h4>
+                    <div class="space-y-6">
+                        <div class="office-card group">
+                            <div class="flex items-center gap-3 mb-1">
+                                <i class="fas fa-building text-primary"></i>
+                                <span class="font-semibold ">Corporate Office</span>
+                            </div>
+                            <p class="text-xs  pl-7">Kemal Ataturk Avenue, Banani, Dhaka-1213.</p>
+                        </div>
+                        <div class="office-card group">
+                            <div class="flex items-center gap-3 mb-1">
+                                <i class="fas fa-house-chimney text-primary"></i>
+                                <span class="font-semibold ">Branch Office</span>
+                            </div>
+                            <p class="text-xs  pl-7">Block-E, Banani, Dhaka-1213.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 relative text-gold">
+                        Newsletter
+                        <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                    </h4>
+                    <p class="text-xs  mb-6 leading-relaxed">Subscribe to get latest updates on Apartment
+                        availability and pricing.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Enter Your Email"
+                            class="w-full text-gold border border-slate-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all">
+                        <button type="submit"
+                            class="w-full bg-gold text-white font-bold py-3 rounded-lg text-xs uppercase tracking-widest shadow-lg transition-all active:scale-95">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs ">
+                    2026 &copy; <span class="">NRB Residence</span>. All Rights Reserved | Developed
+                    by <a href="#" class="text-sky-500 font-bold hover:underline">Techsolutions</a>
+                </p>
+
+                <div class="flex items-center gap-3">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-facebook-f text-white hover:text-black text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-linkedin-in text-white hover:text-black text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-youtube text-white hover:text-black text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+        document.querySelectorAll('#navbar .nav-link').forEach((link) => {
+            const linkPage = (link.getAttribute('href') || '').split('/').pop();
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

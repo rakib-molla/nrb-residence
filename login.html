@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | NRB Residence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/oregon-ldo" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C5A059',
+                        denim: '#0F172A',
+                        sand: '#9F8A76',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Oregon LDO', sans-serif;
+        }
+
+        /* Custom Focus Effect for Inputs */
+        .login-input:focus {
+            border-color: #C5A059;
+            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+
+    <div
+        class="max-w-5xl w-full bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[650px]">
+
+        <div class="md:w-1/2 relative hidden md:block">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1000"
+                alt="Luxury Real Estate" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-denim/60 backdrop-blur-[2px] flex flex-col justify-end p-12 text-white">
+                <h2 class="text-4xl font-extrabold mb-4 italic">Own Your Future.</h2>
+                <p class="text-slate-300 leading-relaxed mb-6">Access your personal dashboard to track Apartment
+                    availability, payments, and site visit schedules.</p>
+                <div class="flex gap-2">
+                    <div class="w-12 h-1 bg-gold rounded-full"></div>
+                    <div class="w-4 h-1 bg-white/30 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+            <div class="mb-10 text-center md:text-left">
+                <h1 class="text-4xl font-extrabold text-denim mb-2">Member Login</h1>
+                <p class="text-slate-500">Enter your credentials to access your account</p>
+            </div>
+
+            <form action="#" class="space-y-6">
+                <div class="space-y-2">
+                    <label class="text-xs uppercase tracking-[0.2em] font-bold text-slate-400 ml-1">Email
+                        Address</label>
+                    <div class="relative">
+                        <span
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 border-r pr-3 border-gray-200">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <input type="email" placeholder="name@example.com"
+                            class="login-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl transition-all outline-none pl-14">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center px-1">
+                        <label class="text-xs uppercase tracking-[0.2em] font-bold text-slate-400">Password</label>
+                        <a href="#" class="text-xs font-bold text-gold hover:underline">Forgot?</a>
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 border-r pr-3 border-gray-200">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" placeholder="••••••••"
+                            class="login-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl transition-all outline-none pl-14">
+                        <button type="button"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-gold transition-colors">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 px-1">
+                    <input type="checkbox" id="remember"
+                        class="w-4 h-4 accent-gold rounded border-gray-300 cursor-pointer">
+                    <label for="remember" class="text-sm text-slate-600 font-medium cursor-pointer select-none">Keep me
+                        logged in</label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-denim hover:bg-gold text-white font-bold py-4 rounded-xl shadow-xl shadow-denim/10 transition-all duration-300 transform active:scale-[0.98] uppercase tracking-widest">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-100"></div>
+                </div>
+                <div class="relative flex justify-center text-xs uppercase tracking-widest font-bold">
+                    <span class="bg-white px-4 text-slate-400">Or continue with</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <button
+                    class="flex items-center justify-center gap-2 py-3 px-4 border border-gray-200 rounded-xl hover:bg-slate-50 transition-colors">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="h-5" alt="Google">
+                    <span class="text-sm font-bold text-slate-700">Google</span>
+                </button>
+                <button
+                    class="flex items-center justify-center gap-2 py-3 px-4 border border-gray-200 rounded-xl hover:bg-slate-50 transition-colors">
+                    <i class="fab fa-facebook text-blue-600 text-lg"></i>
+                    <span class="text-sm font-bold text-slate-700">Facebook</span>
+                </button>
+            </div>
+
+            <p class="mt-10 text-center text-slate-500 text-sm">
+                Don't have an account?
+                <a href="#" class="text-gold font-extrabold hover:underline ml-1">Create Account</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

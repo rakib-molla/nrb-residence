@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | NRB Residence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/oregon-ldo" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C5A059',
+                        denim: '#0F172A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Oregon LDO', sans-serif;
+        }
+
+        .reg-input:focus {
+            border-color: #C5A059;
+            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 lg:p-8">
+
+    <div
+        class="max-w-6xl w-full bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row shadow-gold/5">
+
+        <div class="md:w-5/12 bg-denim relative p-12 text-white flex flex-col justify-between overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <img src="https://www.transparenttextures.com/patterns/carbon-fibre.png"
+                    class="w-full h-full object-cover" alt="pattern">
+            </div>
+
+            <div class="relative z-10">
+                <img src="https://demo.nrbresidence.com/assets/web/images/nrb-residence-new-logo.png" alt="Logo" class="h-10 bg-white p-2 rounded mb-10">
+                <h2 class="text-4xl font-extrabold mb-6 italic leading-tight">Start Your <br><span
+                        class="text-gold">Investment</span> Journey</h2>
+                <ul class="space-y-4 text-slate-300">
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-gold"></i> Exclusive Apartment
+                        Pre-views</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-gold"></i> Real-time
+                        Installment Tracking</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-gold"></i> Direct Support
+                        with Specialists</li>
+                </ul>
+            </div>
+
+            <div class="relative z-10 pt-10 border-t border-white/10">
+                <p class="text-sm text-slate-400 font-medium">Already have an account?</p>
+                <a href="login.html"
+                    class="inline-block mt-2 text-gold font-bold hover:text-white transition-colors">Login to your
+                    dashboard &rarr;</a>
+            </div>
+        </div>
+
+        <div class="md:w-7/12 p-8 lg:p-16">
+            <div class="mb-10">
+                <h1 class="text-3xl font-extrabold text-denim mb-2">Create Account</h1>
+                <p class="text-slate-500">Join the NRB Residence community today.</p>
+            </div>
+
+            <form action="#" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="space-y-1">
+                        <label class="text-xs uppercase tracking-widest font-bold text-slate-400">First Name</label>
+                        <input type="text" placeholder="John"
+                            class="reg-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none transition-all">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs uppercase tracking-widest font-bold text-slate-400">Last Name</label>
+                        <input type="text" placeholder="Doe"
+                            class="reg-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs uppercase tracking-widest font-bold text-slate-400">Email Address</label>
+                    <div class="relative">
+                        <span
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pr-3 border-r border-gray-200">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <input type="email" placeholder="example@mail.com"
+                            class="reg-input w-full pl-14 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs uppercase tracking-widest font-bold text-slate-400">Phone Number</label>
+                    <div class="relative">
+                        <span
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pr-3 border-r border-gray-200">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <input type="tel" placeholder="+880 1XXX XXXXXX"
+                            class="reg-input w-full pl-14 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs uppercase tracking-widest font-bold text-slate-400">Password</label>
+                    <div class="relative">
+                        <span
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pr-3 border-r border-gray-200">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" placeholder="••••••••"
+                            class="reg-input w-full pl-14 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none transition-all">
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 py-2">
+                    <input type="checkbox" id="terms" class="mt-1 w-4 h-4 accent-gold cursor-pointer">
+                    <label for="terms" class="text-sm text-slate-500 leading-snug cursor-pointer">
+                        I agree to the <a href="#" class="text-gold font-bold hover:underline">Terms of Service</a> and
+                        <a href="#" class="text-gold font-bold hover:underline">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-denim hover:bg-gold text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-xl shadow-denim/10 uppercase tracking-widest active:scale-[0.98]">
+                    Create My Account
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

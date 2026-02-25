@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRB Residence - Book Your Apartment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom color configuration */
+        .bg-primary {
+            background-color: #9F8A76;
+        }
+
+        .text-primary {
+            color: #9F8A76;
+        }
+
+        .border-primary {
+            border-color: #9F8A76;
+        }
+
+        /* Smooth transitions */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <section class="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Apartment Apartmentscape" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <div
+            class="relative z-10 max-w-4xl w-full bg-white/95 backdrop-blur-sm shadow-2xl rounded-3xl overflow-hidden flex flex-col md:flex-row">
+
+            <div class="md:w-1/3 bg-primary p-8 text-white flex flex-col justify-center items-center text-center">
+                <span class="text-sm uppercase tracking-widest opacity-80 mb-2">Starting From</span>
+                <div class="text-4xl font-bold mb-2">৳10,000<span class="text-lg font-normal">/mo</span></div>
+                <div class="h-1 w-12 bg-white/30 my-4"></div>
+                <p class="text-sm italic opacity-90">Secure your future home with easy installments.</p>
+            </div>
+
+            <div class="md:w-2/3 p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6 leading-tight">
+                    Book Your <span class="text-primary">Apartment Now!</span>
+                </h2>
+
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    Don't miss out on the chance to own a piece of natural beauty at
+                    <span class="font-semibold">NRB Residence</span>. Just 20 minutes from Rajuk Purbachal
+                    and 5 minutes from Sonargaon tourist town via Purbachal Express Highway.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#"
+                        class="hover-lift flex items-center justify-center gap-2 bg-primary text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-gray-400/20 hover:opacity-90 transition-all">
+                        <i class="fas fa-file-download"></i>
+                        Download Form
+                    </a>
+
+                    <a href="#"
+                        class="hover-lift flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Download Brochure
+                    </a>
+                </div>
+
+                <div class="mt-8 pt-8 border-t border-gray-100 flex items-center gap-6">
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-shield-alt text-primary mr-2"></i> Authorized Apartment
+                    </div>
+                    <div class="flex items-center text-xs text-gray-400">
+                        <i class="fas fa-clock text-primary mr-2"></i> Limited Availability
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfbf7;
+            overflow-x: hidden;
+        }
+
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ১. স্লাইডার গ্যাপ এবং অ্যালাইনমেন্ট */
+        .slick-track {
+            display: flex !important;
+            items-align: end !important;
+            /* কার্ডগুলোকে নিচের দিকে রাখবে */
+            align-items: flex-end !important;
+        }
+
+        .slick-slide {
+            height: inherit !important;
+            padding: 0 20px;
+            /* কার্ডের মাঝখানের গ্যাপ (Gap) */
+            outline: none;
+        }
+
+        .slick-list {
+            margin: 0 -20px;
+            /* সাইডের মার্জিন ব্যালেন্স করা */
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+
+        /* ২. কার্ড ডিজাইন লজিক (নিচে ঝুলে থাকবে) */
+        .slider-card {
+            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            transform: scale(0.8);
+            opacity: 0.5;
+            transform-origin: bottom center;
+            /* নিচ থেকে ছোট/বড় হবে */
+            width: 100%;
+        }
+
+        /* ৩. একটিভ কার্ড বড় হবে */
+        .slick-current .slider-card {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Custom Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding-right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="py-12 px-4">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="nav-container">
+            <button id="prevBtn"
+                class="w-12 h-12 rounded-full bg-[#8b735b] text-white flex items-center justify-center hover:bg-[#6f5c49] transition-all shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+            <button id="nextBtn"
+                class="w-12 h-12 rounded-full bg-[#8b735b] text-white flex items-center justify-center hover:bg-[#6f5c49] transition-all shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="main-slider">
+
+            <div>
+                <div class="slider-card cursor-pointer">
+                    <div class="overflow-hidden rounded-sm aspect-[3/4] mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="serif-title text-2xl text-[#181D24]">Purbachal Fanam City</h3>
+                    <p class="text-[#897059] text-sm uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="slider-card cursor-pointer">
+                    <div class="overflow-hidden rounded-sm aspect-[3/4] mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full ">
+                    </div>
+                    <h3 class="serif-title text-2xl text-[#181D24]">NRB Residence</h3>
+                    <p class="text-[#897059] text-sm uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="slider-card cursor-pointer">
+                    <div class="overflow-hidden rounded-sm aspect-[3/4] mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="serif-title text-2xl text-[#181D24]">Purbachal Fanam City</h3>
+                    <p class="text-[#897059] text-sm uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="slider-card cursor-pointer">
+                    <div class="overflow-hidden rounded-sm aspect-[3/4] mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="serif-title text-2xl text-[#181D24]">Purbachal Royal City</h3>
+                    <p class="text-[#897059] text-sm uppercase tracking-widest mt-2">Residential • Dhaka</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.main-slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: false,
+                cssEase: 'cubic-bezier(0.2, 1, 0.3, 1)',
+                speed: 1000,
+                // --- Auto Play Settings ---
+                autoplay: true,              
+                autoplaySpeed: 1000,       
+                pauseOnHover: true,          
+                pauseOnFocus: true,          
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: { slidesToShow: 3 }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: { slidesToShow: 1.5, centerMode: true, centerPadding: '20px' }
+                    }
+                ]
+            });
+
+            $('#nextBtn').click(function () { $('.main-slider').slick('slickNext'); });
+            $('#prevBtn').click(function () { $('.main-slider').slick('slickPrev'); });
+        });
+    </script>
+</body>
+
+</html>
