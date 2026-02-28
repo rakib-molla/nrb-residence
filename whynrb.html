@@ -6,66 +6,406 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        gold: '#C5A059',
+                        dark: '#1a1a1a',
+                        denim: '#181D24',
+                    },
+                    animation: {
+                        'text-up': 'textUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        textUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'kalpurush';
+            src: url('./fonts/kalpurush.ttf') format('truetype');
+            /* .ttf hole 'truetype' likhte hoy */
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 2. Full body ba nirdishto class-e font apply kora */
+        .font-bangla {
+            font-family: 'kalpurush', sans-serif !important;
+        }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Arimo';
+            background-color: #FFFFFF !important;
         }
 
-        .text-primary {
-            color: #9F8A76;
+        /* mobile menu start  */
+        #mobile-menu-overlay {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
+        /* mobile menu end  */
 
     </style>
+
 </head>
 
-<body class="bg-slate-50 text-slate-900">
+<body>
 
-    
+    <header>
+        <nav id="navbar"
+            class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 lg:py-5 px-6 md:px-10 lg:px-12 flex items-center justify-between  border-white/10 bg-gradient-to-b from-black/80 to-transparent">
 
-    
+            <div class="flex flex-column tracking-[0.2em] items-start md:items-center">
+                <a href="index.html">
+                    <img src="https://i.ibb.co.com/VYwysF2j/NRB-Logo-white.png" class="h-10 md:h-14 mb-1" alt="Logo">
+                </a>
 
-    <section class="py-24 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-800">WHY <span class="text-primary">NRB
-                    RESIDENCE</span></h2>
-            <p class="text-slate-500 mt-2">Find your dream Apartment from our Recent added properties.</p>
-        </div>
-
-        <div
-            class="bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
-                <i class="fa-solid fa-key text-4xl text-primary mb-6"></i>
-                <h4 class="font-bold text-lg mb-3">Find Your Home</h4>
-                <p class="text-sm text-slate-500">Discover your perfect home where dreams become reality.</p>
             </div>
-            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
-                <i class="fa-solid fa-handshake text-4xl text-primary mb-6"></i>
-                <h4 class="font-bold text-lg mb-3">Trusted by Thousands</h4>
-                <p class="text-sm text-slate-500">Join the ranks who trust NRB for quality and reliability.</p>
-            </div>
-            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
-                <i class="fa-solid fa-wallet text-4xl text-primary mb-6"></i>
-                <h4 class="font-bold text-lg mb-3">Financing Made Easy</h4>
-                <p class="text-sm text-slate-500">Our straightforward options make owning property hassle-free.</p>
-            </div>
-            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
-                <i class="fa-solid fa-headset text-4xl text-primary mb-6"></i>
-                <h4 class="font-bold text-lg mb-3">24/7 Support</h4>
-                <p class="text-sm text-slate-500">We are here around the clock to ensure your concerns are addressed.
-                </p>
-            </div>
-        </div>
 
-        <div class="flex justify-center mt-12">
-            <button
-                class="px-10 py-4  text-white font-bold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all">
-                VIEW MORE PROPERTIES
+            <div
+                class="hidden md:flex relative md:absolute md:left-1/2 md:-translate-x-1/2 flex-row flex-1 md:space-x-6 lg:space-x-8 text-xs uppercase items-start md:items-center font-sans">
+
+                <a href="index.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Home
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+                <a href="aboutus.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    About Us
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+                <a href="projects.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Projects
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+                <a href="contact.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Contact
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="whynrb.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Why NRB
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="brochure.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Brochure
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="brochure.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    How To Buy
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+                <a href="faq.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                    Faq's
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                </a>
+
+            </div>
+
+            <div class="flex flex-1 justify-end items-center space-x-4 md:space-x-6 lg:space-x-8">
+                <!-- <a href="contact.html"
+                            class="hidden lg:block text-xs uppercase tracking-[0.2em] transition-colors">Contact</a> -->
+
+                <button onclick="toggleMenu()"
+                    class="flex items-center space-x-2 md:space-x-3 border border-white/40 rounded-full px-4 md:px-5 py-2 hover:bg-white text-white hover:text-black transition-all group text-[10px] md:text-[10px]">
+                    <span class="uppercase text-[10px] tracking-[0.2em] font-bold ">Menu</span>
+                    <div class="w-5 flex flex-col space-y-1">
+                        <span class="h-[1px] w-full bg-current"></span>
+                        <span class="h-[1px] w-3/4 bg-current"></span>
+                    </div>
+                </button>
+
+                <!-- <button
+                        class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:border-gold hover:text-gold transition-all">
+                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    </button> -->
+            </div>
+        </nav>
+        <div id="mobile-menu-overlay"
+            class="fixed inset-0 bg-dark/95 z-[60] transform translate-x-full flex flex-col items-center justify-center">
+            <button onclick="toggleMenu()" class="absolute  top-10 right-10 text-3xl hover:text-gold">
+                <i class="fa-solid fa-xmark"></i>
             </button>
+            <div class="text-center space-y-8">
+                <a href="index.html" class="block font- text-5xl hover:text-gold ">Home</a>
+                <a href="aboutus.html" class="block font- text-5xl hover:text-gold ">About Us</a>
+                <a href="projects.html" class="block font- text-5xl hover:text-gold ">Projects</a>
+                <a href="contact.html" class="block font- text-5xl hover:text-gold ">Contact</a>
+                <a href="brochure.html" class="block font- text-5xl hover:text-gold ">Company Profile</a>
+                <a href="faq.html" class="block font- text-5xl hover:text-gold">Faq</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- bg section  -->
+    <section class="bg-denim py-28 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-60">
+            <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=2000"
+                alt="pattern">
+        </div>
+        <div class="relative z-10 px-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">Why NRB Residence </h1>
         </div>
     </section>
 
+    <div class="bg-gray-100 py-12">
+    <section class="py-12 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800">WHY <span class="text-gold">NRB
+                    RESIDENCE</span></h2>
+            <p class="text-denim mt-2">Find your dream Apartment from our Recent added properties.</p>
+        </div>
+    
+        <div
+            class="bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                <i class="fa-solid fa-key text-4xl text-gold mb-6"></i>
+                <h4 class="font-bold text-gold text-xl mb-3">Guaranteed Possession</h4>
+                <p class="text-lg text-denim">Handover guaranteed within 5 years for your 2BHK urban apartment</p>
+            </div>
+            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                <i class="fa-solid fa-handshake text-4xl text-gold mb-6"></i>
+                <h4 class="font-bold text-gold text-xl mb-3">Trusted NRB Brand</h4>
+                <p class="text-lg text-denim">The definitive answer for diaspora capital, built on transparency and
+                    trust</p>
+            </div>
+            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                <i class="fa-solid fa-wallet text-4xl text-gold mb-6"></i>
+                <h4 class="font-bold text-gold text-xl mb-3">High-Yield Returns</h4>
+                <p class="text-lg text-denim">Turn your remittance into a tangible asset with sustainable rental
+                    income.</p>
+            </div>
+            <div class="p-10 text-center hover:bg-slate-50 transition-colors">
+                <i class="fa-solid fa-headset text-4xl text-gold mb-6"></i>
+                <h4 class="font-bold text-gold text-xl mb-3">The Global Bridge</h4>
+                <p class="text-lg text-denim">We provide 24/7 support to connect your investment with secure Dhaka
+                    real estate.
+                </p>
+            </div>
+        </div>
+    
+        <div class="flex justify-center mt-12">
+            <a href="projects.html"
+                class="px-10 py-4 bg-gold text-white font-bold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all">
+                VIEW MORE PROPERTIES
+            </a>
+        </div>
+    </section>
+    </div>
+
+    <!-- footer section  -->
+    <footer class="bg-white text-black pt-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+
+                <div class="space-y-6">
+
+                    <h4 class="text-xl font-bold tracking-tight text-gold">Office Location</h4>
+                    <div class="space-y-4 text-sm text-black">
+                        <p class="leading-relaxed flex gap-3">
+                            <i class="fas fa-location-dot  mt-1"></i>
+                            <span class="">Level-12, Ahmed Tower, 28 & 30, Kemal Ataturk
+                                Avenue, Banani, Dhaka-1213</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-phone "></i>
+                            <span class="">+8802222275895</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-envelope "></i>
+                            <span class="">info@nrbresidence.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 relative text-gold">
+                        Navigation
+                        <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                    </h4>
+                    <ul class="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+                        <li><a href="#" class="footer-link"></i> Home</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i>
+                                Brochure</a></li>
+                        <li><a href="#" class="footer-link"></i> About
+                                Us</a></li>
+                        <li><a href="#" class="footer-link"></i> How to
+                                Buy</a></li>
+                        <li><a href="#" class="footer-link"></i> Why NRB</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i> FAQ's</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i>
+                                Projects</a></li>
+                        <li><a href="#" class="footer-link"></i> Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 relative text-gold">
+                        Our Offices
+                        <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                    </h4>
+                    <div class="space-y-6">
+                        <div class="office-card group">
+                            <div class="flex items-center gap-3 mb-1">
+                                <i class="fas fa-building text-primary"></i>
+                                <span class="font-semibold ">Corporate Office</span>
+                            </div>
+                            <p class="text-xs  pl-7">Kemal Ataturk Avenue, Banani, Dhaka-1213.</p>
+                        </div>
+                        <div class="office-card group">
+                            <div class="flex items-center gap-3 mb-1">
+                                <i class="fas fa-house-chimney text-primary"></i>
+                                <span class="font-semibold ">Branch Office</span>
+                            </div>
+                            <p class="text-xs  pl-7">Block-E, Banani, Dhaka-1213.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs ">
+                    2026 &copy; <span class="">NRB Residence</span>. All Rights Reserved | Developed
+                    by <a href="#" class="text-sky-500 font-bold hover:underline">Techsolutions</a>
+                </p>
+
+                <div class="flex items-center gap-3">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-facebook-f text-white hover:text-black text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-linkedin-in text-white hover:text-black text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-youtube text-white hover:text-black text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- NAVBAR STICKY LOGIC ---
+        const navbar = document.getElementById('navbar');
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 50) {
+        //         navbar.classList.add('bg-gold/90', 'py-10', 'shadow-2xl');
+        //         navbar.classList.remove('py-10', 'bg-gradient-to-b');
+        //     } else {
+        //         navbar.classList.remove('bg-gold/90', 'py-10', 'shadow-2xl');
+        //         navbar.classList.add('py-10', 'bg-gradient-to-b');
+        //     }
+        // });
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Sticky mode: maintain consistent padding and background
+                navbar.classList.add('bg-gold/95', 'shadow-2xl');
+                navbar.classList.remove('bg-gradient-to-b', 'from-black/80', 'to-transparent');
+            } else {
+                // Normal mode: restore original gradient
+                navbar.classList.remove('bg-gold/95', 'shadow-2xl');
+                navbar.classList.add('bg-gradient-to-b', 'from-black/80', 'to-transparent');
+            }
+        });
+        // --- SLIDER LOGIC ---
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentIdx = 0;
+        let isTransitioning = false;
+        const intervalTime = 5000;
+        let slideTimer;
+
+        function updateSlides(targetIdx) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i < targetIdx) {
+                    slide.style.transform = 'translateX(-100%)';
+                } else if (i > targetIdx) {
+                    slide.style.transform = 'translateX(100%)';
+                } else {
+                    slide.style.transform = 'translateX(0)';
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('opacity-100', i === targetIdx);
+                dot.classList.toggle('scale-125', i === targetIdx);
+                dot.classList.toggle('opacity-40', i !== targetIdx);
+                dot.classList.toggle('shadow-[0_0_10px_rgba(255,255,255,0.8)]', i === targetIdx);
+            });
+
+            currentIdx = targetIdx;
+            setTimeout(() => { isTransitioning = false; }, 800);
+        }
+
+        function nextSlide() {
+            let next = (currentIdx + 1) % slides.length;
+            updateSlides(next);
+        }
+
+        function jumpToSlide(idx) {
+            clearInterval(slideTimer);
+            updateSlides(idx);
+            startAutoPlay();
+        }
+
+        function startAutoPlay() {
+            slideTimer = setInterval(nextSlide, intervalTime);
+        }
+
+        // --- MENU TOGGLE ---
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+        function toggleMenu() {
+            menuOverlay.classList.toggle('translate-x-full');
+        }
+
+        // Initialize positions
+        slides.forEach((slide, i) => {
+            if (i > 0) slide.style.transform = 'translateX(100%)';
+        });
+        startAutoPlay();
+    </script>
 </body>
 
 </html>
