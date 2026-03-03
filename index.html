@@ -64,6 +64,10 @@
             background-color: #FFFFFF !important;
         }
 
+        :root {
+            --hero-caption-size: clamp(1.5rem, 4.5vw, 3.5rem);
+        }
+
         /* slider style start  */
        
 
@@ -111,6 +115,75 @@
             z-index: 0;
         }
         /* hero section style end */
+
+        /* custom text style start  */
+        .hero-caption {
+            width: min(100%, 1200px);
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            padding-inline: clamp(1rem, 4vw, 3rem);
+        }
+
+        .hero-headline {
+            font-size: var(--hero-caption-size);
+            line-height: 1.05;
+            text-align: right;
+            max-width: 14ch;
+            padding: clamp(0.8rem, 1.6vw, 1.3rem) clamp(1rem, 2vw, 1.8rem);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.35) 100%);
+            backdrop-filter: blur(1px);
+            text-shadow: 0 6px 24px rgba(0, 0, 0, 0.85);
+            border-right: 3px solid rgba(197, 160, 89, 0.95);
+            box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.01em;
+            position: relative;
+        }
+
+        .hero-line {
+            display: block;
+            position: relative;
+            text-transform: capitalize;
+            word-break: keep-all;
+        }
+
+        .hero-line + .hero-line {
+            margin-top: 0.2em;
+        }
+
+        .hero-line-accent {
+            color: #F3D9A3;
+            text-shadow: 0 0 24px rgba(197, 160, 89, 0.38), 0 8px 24px rgba(0, 0, 0, 0.85);
+        }
+
+        .hero-headline::before {
+            content: "";
+            position: absolute;
+            inset: -10px -10px -10px -30px;
+            background: radial-gradient(circle at right center, rgba(197, 160, 89, 0.16), transparent 62%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 767px) {
+            .hero-caption {
+                justify-content: center;
+            }
+
+            .hero-headline {
+                text-align: center;
+                max-width: 100%;
+                border-right: none;
+                border-bottom: 2px solid rgba(197, 160, 89, 0.95);
+                box-shadow: none;
+            }
+
+            .hero-headline::before {
+                inset: -10px -20px;
+                background: radial-gradient(circle at center, rgba(197, 160, 89, 0.2), transparent 65%);
+            }
+        }
+        
+        /* custom text style end */
         
 
         /* project slider start  */
@@ -330,11 +403,19 @@
             </div>
         
             <div class="absolute inset-0 bg-black/40 z-10"></div>
-            <div class="relative z-20 flex-grow flex flex-col items-center justify-center px-6 text-center">
+            <!-- <div class="relative top-0 z-20 flex-grow flex flex-col items-center justify-center px-6 text-center">
                 <h1 class="text-white font-bangla text-3xl md:text-5xl lg:text-8xl font-bold max-w-5xl leading-tight mb-10">
                     ভাড়ার টাকায়<br class="hidden md:block">
                     নিজের ফ্ল্যাট
                 </h1>
+            </div> -->
+            <div class="relative z-20 flex-grow flex items-center justify-center">
+                <div class="hero-caption">
+                    <h1 class="hero-headline text-white font-bangla font-bold mb-10">
+                        <span class="hero-line">ভাড়ার টাকায়</span>
+                        <span class="hero-line hero-line-accent">নিজের ফ্ল্যাট</span>
+                    </h1>
+                </div>
             </div>
         </section>
 
@@ -1093,6 +1174,9 @@
                                     Projects</a></li>
                             <li><a href="#" class="footer-link"></i> Contact
                                     Us</a></li>
+                            <li><a href="project-details-1.html" class="footer-link"></i> Project Details 1
+                            </a></li>
+                            <li><a href="project-details-2.html" class="footer-link"></i> Project Details 2</a></li>
                         </ul>
                     </div>
         
@@ -1158,7 +1242,7 @@
             $('.excellence-slider').slick({
                 dots: false,
                 infinite: true,
-                autoplay: true,           // Enabled Autoplay
+                autoplay: false,           // Enabled Autoplay
                 autoplaySpeed: 900,      // 3 seconds per slide
                 pauseOnHover: true,       // Pause when mouse is over slider
                 speed: 1000,              // Transition speed

@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRB Residence </title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        gold: '#C5A059',
+                        dark: '#1a1a1a',
+                        denim: '#181D24',
+                    },
+                    animation: {
+                        'text-up': 'textUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        textUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'kalpurush';
+            src: url('./fonts/kalpurush.ttf') format('truetype');
+            /* .ttf hole 'truetype' likhte hoy */
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 2. Full body ba nirdishto class-e font apply kora */
+        .font-bangla {
+            font-family: 'kalpurush', sans-serif !important;
+        }
+
+        body {
+            font-family: 'Arimo';
+            background-color: #FFFFFF !important;
+        }
+
+        /* slider style start  */
+
+
+
+
+
+
+        /* slider style end  */
+
+        #mobile-menu-overlay {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-text {
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Tablet hero text optimization */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .hero-text {
+                font-size: 3.5rem;
+                line-height: 1.2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.25rem;
+                line-height: 1.1;
+            }
+        }
+
+        /* project slider custom styles */
+
+        /* hero section style start  */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        /* hero section style end */
+
+
+        /* Project Section Responsive */
+        .project-section {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .project-title-section h2 {
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .project-title-section {
+                padding: 0 1rem;
+                text-align: center;
+            }
+
+            .project-title-section h2 {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-title-section {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Custom Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding-right: 20px;
+            margin-top: 30px;
+        }
+
+        /* Tablet view: 768px - 1024px */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                padding-right: 0;
+                margin-top: 25px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                padding-right: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-white overflow-x-hidden bg-black">
+    <!-- header section  -->
+    <main class="overflow-x-hidden">
+        <header>
+            <nav id="navbar"
+                class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 lg:py-5 px-6 md:px-10 lg:px-12 flex items-center justify-between  border-white/10 bg-gradient-to-b from-black/80 to-transparent">
+
+                <div class="flex flex-column tracking-[0.2em] items-start md:items-center">
+                    <a href="index.html">
+                        <img src="https://i.ibb.co.com/VYwysF2j/NRB-Logo-white.png" class="h-10 md:h-14 mb-1"
+                            alt="Logo">
+                    </a>
+
+                </div>
+
+                <div
+                    class="hidden md:flex relative md:absolute md:left-1/2 md:-translate-x-1/2 flex-row flex-1 md:space-x-6 lg:space-x-8 text-xs uppercase items-start md:items-center font-sans">
+
+                    <a href="index.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+
+                    <a href="aboutus.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        About Us
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+
+                    <a href="projects.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        Projects
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+
+                    <a href="contact.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        Contact
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+                    <a href="whynrb.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        Why NRB
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+                    <a href="brochure.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        Brochure
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+                    <a href="brochure.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        How To Buy
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+                    <a href="faq.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        Faq's
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+
+                </div>
+
+                <div class="flex flex-1 justify-end items-center space-x-4 md:space-x-6 lg:space-x-8">
+                    <!-- <a href="contact.html"
+                        class="hidden lg:block text-xs uppercase tracking-[0.2em] transition-colors">Contact</a> -->
+
+                    <button onclick="toggleMenu()"
+                        class="flex items-center space-x-2 md:space-x-3 border border-white/40 rounded-full px-4 md:px-5 py-2 hover:bg-white hover:text-black transition-all group text-[10px] md:text-[10px]">
+                        <span class="uppercase text-[10px] tracking-[0.2em] font-bold">Menu</span>
+                        <div class="w-5 flex flex-col space-y-1">
+                            <span class="h-[1px] w-full bg-current"></span>
+                            <span class="h-[1px] w-3/4 bg-current"></span>
+                        </div>
+                    </button>
+
+                    <!-- <button
+                    class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:border-gold hover:text-gold transition-all">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button> -->
+                </div>
+            </nav>
+            <div id="mobile-menu-overlay"
+                class="fixed inset-0 bg-dark/95 z-[60] transform translate-x-full flex flex-col items-center justify-center">
+                <button onclick="toggleMenu()" class="absolute top-10 right-10 text-3xl hover:text-gold">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="text-center space-y-8">
+                    <a href="index.html" class="block font- text-5xl hover:text-gold ">Home</a>
+                    <a href="aboutus.html" class="block font- text-5xl hover:text-gold ">About Us</a>
+                    <a href="projects.html" class="block font- text-5xl hover:text-gold ">Projects</a>
+                    <a href="contact.html" class="block font- text-5xl hover:text-gold ">Contact</a>
+                    <a href="brochure.html" class="block font- text-5xl hover:text-gold ">Company Profile</a>
+                    <a href="faq.html" class="block font- text-5xl hover:text-gold">Faq</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section with Project Overview -->
+        <section class="bg-gradient-to-r from-denim to-black py-28 text-center relative overflow-hidden pt-32">
+            <div class="absolute inset-0 opacity-30">
+                <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=2000"
+                    alt="pattern">
+            </div>
+            <div class="relative z-10 px-6 max-w-7xl mx-auto">
+                <div class="inline-block mb-4">
+                    <span class="text-gold font-bold tracking-[0.3em] uppercase text-xs md:text-sm">Premium Residential
+                        Development</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">NRB Residence</h1>
+                <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-8">
+                    A landmark residential community designed for modern urban living with world-class amenities,
+                    sustainable features, and exceptional investment value.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-gold mb-2">12.5+</div>
+                        <div class="text-gray-400 text-sm">Acres Development</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-gold mb-2">750+</div>
+                        <div class="text-gray-400 text-sm">Residential Units</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-gold mb-2">40%</div>
+                        <div class="text-gray-400 text-sm">Green Space</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Specification Section -->
+        <section class="bg-white py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="border-l-4 border-gold pl-6">
+                        <h3 class="text-gray-600 text-sm uppercase tracking-[0.1em] mb-2">Location</h3>
+                        <p class="text-2xl font-bold text-denim">Banani, Dhaka</p>
+                        <p class="text-gray-600 text-sm mt-2">Prime residential area</p>
+                    </div>
+                    <div class="border-l-4 border-gold pl-6">
+                        <h3 class="text-gray-600 text-sm uppercase tracking-[0.1em] mb-2">Total Area</h3>
+                        <p class="text-2xl font-bold text-denim">12.5 Acres</p>
+                        <p class="text-gray-600 text-sm mt-2">Pristine development</p>
+                    </div>
+                    <div class="border-l-4 border-gold pl-6">
+                        <h3 class="text-gray-600 text-sm uppercase tracking-[0.1em] mb-2">Units</h3>
+                        <p class="text-2xl font-bold text-denim">750+</p>
+                        <p class="text-gray-600 text-sm mt-2">Premium apartments</p>
+                    </div>
+                    <div class="border-l-4 border-gold pl-6">
+                        <h3 class="text-gray-600 text-sm uppercase tracking-[0.1em] mb-2">Status</h3>
+                        <p class="text-2xl font-bold text-gold">Ongoing</p>
+                        <p class="text-gray-600 text-sm mt-2">Phase II Active</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="bg-denim py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Highlights</h2>
+                    <h3 class="text-white text-4xl md:text-5xl font-bold mb-4">Project Features & <span
+                            class="text-gold">Highlights</span></h3>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-gold/20 hover:border-gold/50 transition group">
+                        <div class="text-4xl text-gold mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="text-white text-xl font-bold mb-3">Green Space</h4>
+                        <p class="text-gray-400 text-sm">40% landscaped green areas with parks, gardens, and
+                            recreational zones</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-gold/20 hover:border-gold/50 transition group">
+                        <div class="text-4xl text-gold mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h4 class="text-white text-xl font-bold mb-3">24/7 Security</h4>
+                        <p class="text-gray-400 text-sm">Advanced surveillance, controlled access, and professional
+                            security personnel</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-gold/20 hover:border-gold/50 transition group">
+                        <div class="text-4xl text-gold mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h4 class="text-white text-xl font-bold mb-3">Water Management</h4>
+                        <p class="text-gray-400 text-sm">Sustainable water systems with rainwater harvesting and
+                            recycling</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-gold/20 hover:border-gold/50 transition group">
+                        <div class="text-4xl text-gold mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-person-hiking"></i>
+                        </div>
+                        <h4 class="text-white text-xl font-bold mb-3">Wellness & Fitness</h4>
+                        <p class="text-gray-400 text-sm">State-of-the-art gym, yoga center, swimming pool, and sports
+                            facilities</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-gold/20 hover:border-gold/50 transition group">
+                        <div class="text-4xl text-gold mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4 class="text-white text-xl font-bold mb-3">Smart Systems</h4>
+                        <p class="text-gray-400 text-sm">Smart home automation, energy-efficient systems, and IoT
+                            integration</p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-gold/20 hover:border-gold/50 transition group">
+                        <div class="text-4xl text-gold mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4 class="text-white text-xl font-bold mb-3">Parking Solutions</h4>
+                        <p class="text-gray-400 text-sm">Dedicated parking spaces, EV charging stations, and valet
+                            services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unit Types & Layouts Section -->
+        <section class="bg-white py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Options</h2>
+                    <h3 class="text-denim text-4xl md:text-5xl font-bold mb-4">Unit Types & <span
+                            class="text-gold">Layouts</span></h3>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b-2 border-gold">
+                                <th class="text-left py-4 px-4 text-denim font-bold">Unit Type</th>
+                                <th class="text-center py-4 px-4 text-denim font-bold">Size (Sq Ft)</th>
+                                <th class="text-center py-4 px-4 text-denim font-bold">Bedrooms</th>
+                                <th class="text-center py-4 px-4 text-denim font-bold">Bathrooms</th>
+                                <th class="text-center py-4 px-4 text-denim font-bold">Balcony</th>
+                                <th class="text-center py-4 px-4 text-denim font-bold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition">
+                                <td class="py-4 px-4 font-semibold text-denim">Studio</td>
+                                <td class="text-center py-4 px-4 text-gray-700">650 - 850</td>
+                                <td class="text-center py-4 px-4 text-gray-700">-</td>
+                                <td class="text-center py-4 px-4 text-gray-700">1</td>
+                                <td class="text-center py-4 px-4 text-gray-700">Yes</td>
+                                <td class="text-center py-4 px-4"><span
+                                        class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Available</span>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition">
+                                <td class="py-4 px-4 font-semibold text-denim">1 Bedroom</td>
+                                <td class="text-center py-4 px-4 text-gray-700">1,050 - 1,300</td>
+                                <td class="text-center py-4 px-4 text-gray-700">1</td>
+                                <td class="text-center py-4 px-4 text-gray-700">1</td>
+                                <td class="text-center py-4 px-4 text-gray-700">Yes</td>
+                                <td class="text-center py-4 px-4"><span
+                                        class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Available</span>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition">
+                                <td class="py-4 px-4 font-semibold text-denim">2 Bedroom</td>
+                                <td class="text-center py-4 px-4 text-gray-700">1,550 - 1,850</td>
+                                <td class="text-center py-4 px-4 text-gray-700">2</td>
+                                <td class="text-center py-4 px-4 text-gray-700">2</td>
+                                <td class="text-center py-4 px-4 text-gray-700">Yes</td>
+                                <td class="text-center py-4 px-4"><span
+                                        class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Available</span>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition">
+                                <td class="py-4 px-4 font-semibold text-denim">3 Bedroom</td>
+                                <td class="text-center py-4 px-4 text-gray-700">2,150 - 2,550</td>
+                                <td class="text-center py-4 px-4 text-gray-700">3</td>
+                                <td class="text-center py-4 px-4 text-gray-700">2-3</td>
+                                <td class="text-center py-4 px-4 text-gray-700">Yes</td>
+                                <td class="text-center py-4 px-4"><span
+                                        class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">Limited</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="py-4 px-4 font-semibold text-denim">Penthouse</td>
+                                <td class="text-center py-4 px-4 text-gray-700">3,000 - 3,500</td>
+                                <td class="text-center py-4 px-4 text-gray-700">3-4</td>
+                                <td class="text-center py-4 px-4 text-gray-700">3-4</td>
+                                <td class="text-center py-4 px-4 text-gray-700">Large</td>
+                                <td class="text-center py-4 px-4"><span
+                                        class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-semibold">Sold
+                                        Out</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Accessibility Section -->
+        <section class="bg-denim py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Prime Location</h2>
+                        <h3 class="text-white text-4xl md:text-5xl font-bold mb-6">Strategic Location & <span
+                                class="text-gold">Accessibility</span></h3>
+                        <div class="w-24 h-1 bg-gold mb-8"></div>
+                        <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                            Nestled in the heart of Banani, NRB Residence offers unparalleled connectivity and proximity
+                            to Dhaka's most vibrant districts. The project's strategic location ensures easy access to
+                            business hubs, educational institutions, healthcare facilities, and entertainment centers.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-2xl mt-1"><i class="fas fa-check-circle"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Dhaka International Airport</h4>
+                                    <p class="text-gray-400 text-sm">25 minutes drive</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-2xl mt-1"><i class="fas fa-check-circle"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Business District (Gulshan)</h4>
+                                    <p class="text-gray-400 text-sm">10 minutes drive</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-2xl mt-1"><i class="fas fa-check-circle"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Shopping & Entertainment</h4>
+                                    <p class="text-gray-400 text-sm">5 minutes walk to Banani Lake & Restaurants</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-2xl mt-1"><i class="fas fa-check-circle"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Metro Rail Connection</h4>
+                                    <p class="text-gray-400 text-sm">Planned future connectivity</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-2xl">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7493628408255!2d90.41078367624818!3d23.795675392309825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7d3e8c5c5c5%3A0x8c5c5c5c5c5c5c5c!2sBanani%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1234567890"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Amenities Section -->
+        <section class="bg-white py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Lifestyle</h2>
+                    <h3 class="text-denim text-4xl md:text-5xl font-bold mb-4">World-Class <span
+                            class="text-gold">Amenities</span></h3>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Residential Amenities -->
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                        <h4 class="text-denim text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-home text-gold text-3xl"></i> Residential Amenities
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Spacious living areas with optimized designs
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Premium fixtures and fittings
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Modern kitchen with built-in appliances
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Climate control systems
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                High-speed internet infrastructure
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Wellness Amenities -->
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                        <h4 class="text-denim text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-dumbbell text-gold text-3xl"></i> Wellness & Fitness
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Fully equipped multi-purpose gymnasium
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Olympic-size swimming pool
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Yoga & meditation center
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Indoor sports facilities (badminton, squash)
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Professional spa & wellness center
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Community Amenities -->
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                        <h4 class="text-denim text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-people-group text-gold text-3xl"></i> Community Spaces
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Multi-purpose community center
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Children's playground facilities
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Landscaped parks & walking trails
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Open air theaters & event spaces
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                BBQ zones & leisure areas
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Amenities -->
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                        <h4 class="text-denim text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-concierge-bell text-gold text-3xl"></i> Services & Facilities
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                24/7 concierge & housekeeping
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Laundry & dry cleaning services
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Dedicated parking with EV charging
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                In-pocket retail & dining options
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                                Medical & emergency services
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline & Project Status -->
+        <section class="bg-denim py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Schedule</h2>
+                    <h3 class="text-white text-4xl md:text-5xl font-bold mb-4">Project <span
+                            class="text-gold">Timeline</span></h3>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gold to-transparent">
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- Phase 1 -->
+                        <div class="flex gap-8">
+                            <div class="w-1/2 text-right">
+                                <div
+                                    class="bg-gradient-to-r from-gray-900 to-gray-800 p-6 rounded-lg border border-gold/30">
+                                    <h4 class="text-gold font-bold text-lg mb-2">Phase I - Foundation</h4>
+                                    <p class="text-gray-400 text-sm mb-3">Land preparation, infrastructure setup</p>
+                                    <span class="text-gold font-semibold text-sm">Q2 2024 - Q4 2024</span>
+                                    <div class="mt-3 flex justify-end">
+                                        <span
+                                            class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-semibold">Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2">
+                                <div
+                                    class="w-4 h-4 bg-gold rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-2 border-4 border-denim">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 2 -->
+                        <div class="flex gap-8 flex-row-reverse">
+                            <div class="w-1/2 text-left">
+                                <div
+                                    class="bg-gradient-to-r from-gray-900 to-gray-800 p-6 rounded-lg border border-gold/30">
+                                    <h4 class="text-gold font-bold text-lg mb-2">Phase II - Structure</h4>
+                                    <p class="text-gray-400 text-sm mb-3">Building construction & installation</p>
+                                    <span class="text-gold font-semibold text-sm">Q1 2025 - Q4 2025</span>
+                                    <div class="mt-3 flex justify-start">
+                                        <span
+                                            class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">In
+                                            Progress</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2">
+                                <div
+                                    class="w-4 h-4 bg-gold rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-2 border-4 border-denim">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 3 -->
+                        <div class="flex gap-8">
+                            <div class="w-1/2 text-right">
+                                <div
+                                    class="bg-gradient-to-r from-gray-900 to-gray-800 p-6 rounded-lg border border-gold/30">
+                                    <h4 class="text-gold font-bold text-lg mb-2">Phase III - Finishing</h4>
+                                    <p class="text-gray-400 text-sm mb-3">Interior design, landscaping, amenities</p>
+                                    <span class="text-gold font-semibold text-sm">Q1 2026 - Q2 2026</span>
+                                    <div class="mt-3 flex justify-end">
+                                        <span
+                                            class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-semibold">Planned</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2">
+                                <div
+                                    class="w-4 h-4 bg-gold rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-2 border-4 border-denim">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phase 4 -->
+                        <div class="flex gap-8 flex-row-reverse">
+                            <div class="w-1/2 text-left">
+                                <div
+                                    class="bg-gradient-to-r from-gray-900 to-gray-800 p-6 rounded-lg border border-gold/30">
+                                    <h4 class="text-gold font-bold text-lg mb-2">Phase IV - Delivery</h4>
+                                    <p class="text-gray-400 text-sm mb-3">Final inspections & possession</p>
+                                    <span class="text-gold font-semibold text-sm">Q3 2026</span>
+                                    <div class="mt-3 flex justify-start">
+                                        <span
+                                            class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs font-semibold">Expected</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2">
+                                <div
+                                    class="w-4 h-4 bg-gold rounded-full absolute left-1/2 transform -translate-x-1/2 -translate-y-2 border-4 border-denim">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Highlight Section -->
+        <section class="bg-white py-20 px-4 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <!-- Card 1: Monthly Installment -->
+                    <div
+                        class="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl border-2 border-gold/30 hover:border-gold shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-gold/80 to-transparent">
+                        </div>
+                        <div class="p-12 h-full flex flex-col justify-between">
+                            <div class="mb-8">
+                                <div
+                                    class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center group-hover:bg-gold/20 transition">
+                                    <i class="fas fa-wallet text-gold text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="mb-8">
+                                <p class="text-gray-500 text-sm uppercase tracking-widest font-semibold mb-2">সর্বনিম্ন
+                                    মাসিক পেমেন্ট</p>
+                                <h3 class="text-5xl md:text-6xl font-black text-denim mb-4">
+                                    ১৫,০০০<span class="text-2xl text-gray-400 font-normal"> টাকা</span>
+                                </h3>
+                                <p class="text-gray-600 text-lg font-semibold">মাসিক কিস্তিতে শুরু</p>
+                                <p class="text-gray-500 text-sm mt-3">নমনীয় সময়কাল অপশন ৫-২০ বছর</p>
+                            </div>
+                            <div class="bg-gold/5 border border-gold/30 rounded-lg p-4 mb-6">
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-gold text-xl mt-1"></i>
+                                    <div>
+                                        <p class="text-gray-700 font-semibold text-sm">কোন লুকানো চার্জ নেই</p>
+                                        <p class="text-gray-600 text-xs mt-1">সম্পূর্ণ স্বচ্ছ এবং সৎ মূল্য নির্ধারণ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full bg-gold text-white font-bold py-3 rounded-lg hover:bg-gold/90 transition transform group-hover:scale-105 duration-300">
+                                বিস্তারিত জানুন
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Ownership Timeline -->
+                    <div
+                        class="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl border-2 border-denim/30 hover:border-denim shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-denim via-denim/80 to-transparent">
+                        </div>
+                        <div class="p-12 h-full flex flex-col justify-between">
+                            <div class="mb-8">
+                                <div
+                                    class="w-16 h-16 bg-denim/10 rounded-full flex items-center justify-center group-hover:bg-denim/20 transition">
+                                    <i class="fas fa-home text-denim text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="mb-8">
+                                <p class="text-gray-500 text-sm uppercase tracking-widest font-semibold mb-2">সম্পূর্ণ
+                                    মালিকানা</p>
+                                <h3 class="text-5xl md:text-6xl font-black text-denim mb-4">
+                                    ৫<span class="text-2xl text-gray-400 font-normal"> বছরে</span>
+                                </h3>
+                                <p class="text-gray-600 text-lg font-semibold">নিজের ফ্ল্যাটের মালিক হন</p>
+                                <p class="text-gray-500 text-sm mt-3">প্রথম পেমেন্টের পর থেকে আপনার নিজস্ব সম্পত্তি</p>
+                            </div>
+                            <div class="bg-denim/5 border border-denim/30 rounded-lg p-4 mb-6">
+                                <div class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-denim text-xl mt-1"></i>
+                                    <div>
+                                        <p class="text-gray-700 font-semibold text-sm">আপনার স্বপ্নের বাড়ি</p>
+                                        <p class="text-gray-600 text-xs mt-1">সম্পূর্ণ আইনি সুরক্ষা এবং নিরাপত্তা</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full bg-denim text-white font-bold py-3 rounded-lg hover:bg-denim/90 transition transform group-hover:scale-105 duration-300">
+                                যোগাযোগ করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-denim mb-4">
+                        আপনার বাড়ির মালিক হওয়ার সাশ্রয়ী পথ
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                        NRB Residence-এ বিনিয়োগ করুন এবং ৫ বছরে আপনার স্বপ্নের বাড়ি পান। কোন লুকানো খরচ নেই, শুধুমাত্র
+                        স্বচ্ছ এবং সহজ শর্তাবলী।
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Terms Overview Section -->
+        <section class="bg-gradient-to-br from-denim via-gray-900 to-black py-24 px-4 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <!-- Main Headline Section -->
+                <div class="text-center mb-20">
+                    <div class="inline-block mb-6 px-6 py-2 bg-gold/10 border border-gold/30 rounded-full">
+                        <span class="text-gold font-bold tracking-[0.3em] uppercase text-xs">স্পেশাল অফার</span>
+                    </div>
+
+                    <h2 class="text-white text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+                        মাত্র <span class="text-gold">১৫,০০০ টাকা</span> মাসিক কিস্তিতে
+                    </h2>
+
+                    <p class="text-gray-300 text-2xl md:text-4xl font-bold mb-6">
+                        <span class="text-gold">৫ বছরে</span> আপনার নিজের ফ্ল্যাটের মালিক হন!
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-4 items-center text-gray-400 text-lg mb-12">
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>কোন লুকানো চার্জ নেই</span>
+                        </span>
+                        <span class="text-gold">•</span>
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>সম্পূর্ণ স্বচ্ছ প্রক্রিয়া</span>
+                        </span>
+                        <span class="text-gold">•</span>
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>তাৎক্ষণিক দখল</span>
+                        </span>
+                    </div>
+
+                    <div class="w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Left: Key Benefits -->
+                    <div class="space-y-8">
+                        <!-- Benefit 1 -->
+                        <div class="group hover:transform hover:scale-105 transition duration-300">
+                            <div
+                                class="bg-gradient-to-r from-gold/20 to-transparent border-l-4 border-gold p-8 rounded-r-2xl">
+                                <div class="flex items-start gap-6">
+                                    <div
+                                        class="w-16 h-16 bg-gold rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                                        <i class="fas fa-money-bill-wave text-white text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-white text-2xl md:text-3xl font-bold mb-3">সবচেয়ে কম মাসিক
+                                            কিস্তি</h3>
+                                        <p class="text-gray-300 text-lg leading-relaxed">
+                                            মাত্র <strong class="text-gold">১৫,০০০ টাকা</strong> থেকে শুরু করুন আপনার
+                                            স্বপ্নের বাড়ির মালিকানা। সকল ইউনিট টাইপের জন্য উপলব্ধ নমনীয় পরিকল্পনা।
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefit 2 -->
+                        <div class="group hover:transform hover:scale-105 transition duration-300">
+                            <div
+                                class="bg-gradient-to-r from-gold/20 to-transparent border-l-4 border-gold p-8 rounded-r-2xl">
+                                <div class="flex items-start gap-6">
+                                    <div
+                                        class="w-16 h-16 bg-gold rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                                        <i class="fas fa-home text-white text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-white text-2xl md:text-3xl font-bold mb-3">৫ বছরে সম্পূর্ণ
+                                            মালিকানা</h3>
+                                        <p class="text-gray-300 text-lg leading-relaxed">
+                                            শুধুমাত্র <strong class="text-gold">৫ বছরে</strong> আপনার ফ্ল্যাটের সম্পূর্ণ
+                                            মালিক হয়ে যান। দ্রুত এবং নিশ্চিত দখল নিশ্চয়তা।
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefit 3 -->
+                        <div class="group hover:transform hover:scale-105 transition duration-300">
+                            <div
+                                class="bg-gradient-to-r from-gold/20 to-transparent border-l-4 border-gold p-8 rounded-r-2xl">
+                                <div class="flex items-start gap-6">
+                                    <div
+                                        class="w-16 h-16 bg-gold rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-white text-2xl md:text-3xl font-bold mb-3">স্বচ্ছ ও নিরাপদ
+                                            লেনদেন</h3>
+                                        <p class="text-gray-300 text-lg leading-relaxed">
+                                            কোন লুকানো চার্জ নেই। সম্পূর্ণ <strong class="text-gold">আইনি
+                                                সুরক্ষা</strong> এবং স্বচ্ছ মূল্য নির্ধারণ। আপনার বিশ্বাস আমাদের
+                                            দায়িত্ব।
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div class="pt-6">
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-3 bg-gold hover:bg-gold/90 text-white font-bold text-xl px-12 py-5 rounded-full shadow-2xl shadow-gold/30 transition transform hover:scale-105">
+                                <span>এখনই যোগাযোগ করুন</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Brochure Image -->
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-gold/30 to-gold/10 rounded-3xl blur-xl group-hover:blur-2xl transition">
+                        </div>
+                        <div
+                            class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/40 group-hover:border-gold transition">
+                            <img src="https://i.ibb.co.com/KcZrX0VT/Brochure-NRB-Residence-copy-1.png"
+                                alt="NRB Residence Payment Plans"
+                                class="w-full h-auto aspect-[4/3] md:aspect-video lg:h-[600px] object-contain md:object-cover md:object-top transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
+                                <p class="text-white text-lg font-bold mb-2">বিস্তারিত তথ্যের জন্য</p>
+                                <button
+                                    class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-8 py-3 rounded-full border border-white/50 transition">
+                                    ব্রোশিওর ডাউনলোড করুন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Stats Banner -->
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gold/20 text-center hover:border-gold/50 transition">
+                        <div class="text-gold text-4xl font-black mb-2">১৫,০০০+</div>
+                        <p class="text-gray-400 text-sm">টাকা থেকে শুরু</p>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gold/20 text-center hover:border-gold/50 transition">
+                        <div class="text-gold text-4xl font-black mb-2">৫ বছর</div>
+                        <p class="text-gray-400 text-sm">সম্পূর্ণ মালিকানা</p>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gold/20 text-center hover:border-gold/50 transition">
+                        <div class="text-gold text-4xl font-black mb-2">০%</div>
+                        <p class="text-gray-400 text-sm">লুকানো চার্জ</p>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gold/20 text-center hover:border-gold/50 transition">
+                        <div class="text-gold text-4xl font-black mb-2">১০০%</div>
+                        <p class="text-gray-400 text-sm">স্বচ্ছতা</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flexible Payment Plans Section -->
+        <section class="bg-white py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">আর্থিক স্বাধীনতা</h2>
+                    <h3 class="text-denim text-4xl md:text-5xl font-bold mb-4">নমনীয় কিস্তি <span
+                            class="text-gold">পরিকল্পনা</span></h3>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-8">আপনার বাজেট এবং প্রয়োজন অনুযায়ী সেরা
+                        পেমেন্ট পরিকল্পনা নির্বাচন করুন</p>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- 5 Years Plan -->
+                    <div class="group hover:shadow-2xl transition duration-300">
+                        <div
+                            class="bg-gradient-to-br from-gold/10 to-gold/5 border-2 border-gold hover:border-gold p-8 rounded-xl text-center h-full flex flex-col justify-between">
+                            <div>
+                                <div class="text-5xl font-bold text-gold mb-3">৫</div>
+                                <h4 class="text-denim font-bold text-2xl mb-4">বছর</h4>
+                                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                    দ্রুত মালিকানা অর্জন করুন
+                                </p>
+                            </div>
+                            <div class="border-t border-gold/30 pt-6">
+                                <p class="text-gray-500 text-xs mb-2">মাসিক কিস্তি শুরু</p>
+                                <p class="text-denim font-bold text-xl">৪৫,০০০+ টাকা</p>
+                                <p class="text-gray-600 text-xs mt-3 leading-relaxed">উচ্চতর মাসিক পেমেন্ট, কম সময়ে
+                                    নিয়ন্ত্রণ</p>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-gold text-white font-bold py-2 rounded-lg hover:bg-gold/90 transition">যোগাযোগ
+                                করুন</button>
+                        </div>
+                    </div>
+
+                    <!-- 10 Years Plan -->
+                    <div class="group hover:shadow-2xl transition duration-300">
+                        <div
+                            class="bg-gradient-to-br from-green-100/10 to-green-50/5 border-2 border-green-500 hover:border-green-600 p-8 rounded-xl text-center h-full flex flex-col justify-between relative overflow-hidden">
+                            <div
+                                class="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                জনপ্রিয়</div>
+                            <div>
+                                <div class="text-5xl font-bold text-green-600 mb-3">১০</div>
+                                <h4 class="text-denim font-bold text-2xl mb-4">বছর</h4>
+                                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                    সর্বোত্তম ভারসাম্য
+                                </p>
+                            </div>
+                            <div class="border-t border-green-500/30 pt-6">
+                                <p class="text-gray-500 text-xs mb-2">মাসিক কিস্তি শুরু</p>
+                                <p class="text-denim font-bold text-xl">২৫,০০০+ টাকা</p>
+                                <p class="text-gray-600 text-xs mt-3 leading-relaxed">মধ্যম পেমেন্ট, নমনীয় সময়কাল</p>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-green-500 text-white font-bold py-2 rounded-lg hover:bg-green-600 transition">যোগাযোগ
+                                করুন</button>
+                        </div>
+                    </div>
+
+                    <!-- 15 Years Plan -->
+                    <div class="group hover:shadow-2xl transition duration-300">
+                        <div
+                            class="bg-gradient-to-br from-blue-100/10 to-blue-50/5 border-2 border-blue-500 hover:border-blue-600 p-8 rounded-xl text-center h-full flex flex-col justify-between">
+                            <div>
+                                <div class="text-5xl font-bold text-blue-600 mb-3">১৫</div>
+                                <h4 class="text-denim font-bold text-2xl mb-4">বছর</h4>
+                                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                    আরামদায়ক পেমেন্ট
+                                </p>
+                            </div>
+                            <div class="border-t border-blue-500/30 pt-6">
+                                <p class="text-gray-500 text-xs mb-2">মাসিক কিস্তি শুরু</p>
+                                <p class="text-denim font-bold text-xl">১৮,০০০+ টাকা</p>
+                                <p class="text-gray-600 text-xs mt-3 leading-relaxed">কম মাসিক চাপ, দীর্ঘমেয়াদী
+                                    পরিকল্পনা</p>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-blue-500 text-white font-bold py-2 rounded-lg hover:bg-blue-600 transition">যোগাযোগ
+                                করুন</button>
+                        </div>
+                    </div>
+
+                    <!-- 20 Years Plan -->
+                    <div class="group hover:shadow-2xl transition duration-300">
+                        <div
+                            class="bg-gradient-to-br from-purple-100/10 to-purple-50/5 border-2 border-purple-500 hover:border-purple-600 p-8 rounded-xl text-center h-full flex flex-col justify-between">
+                            <div>
+                                <div class="text-5xl font-bold text-purple-600 mb-3">২০</div>
+                                <h4 class="text-denim font-bold text-2xl mb-4">বছর</h4>
+                                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                    সর্বনিম্ন মাসিক পেমেন্ট
+                                </p>
+                            </div>
+                            <div class="border-t border-purple-500/30 pt-6">
+                                <p class="text-gray-500 text-xs mb-2">মাসিক কিস্তি শুরু</p>
+                                <p class="text-denim font-bold text-xl">১৫,০০০+ টাকা</p>
+                                <p class="text-gray-600 text-xs mt-3 leading-relaxed">সাশ্রয়ী মাসিক, সর্বাধিক সুবিধা
+                                </p>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-purple-500 text-white font-bold py-2 rounded-lg hover:bg-purple-600 transition">যোগাযোগ
+                                করুন</button>
+                        </div>
+                    </div>
+
+                    <!-- Special 5 Year Possession -->
+                    <div class="group hover:shadow-2xl transition duration-300">
+                        <div
+                            class="bg-gradient-to-br from-red-100/10 to-red-50/5 border-2 border-red-500 hover:border-red-600 p-8 rounded-xl text-center h-full flex flex-col justify-between relative overflow-hidden">
+                            <div
+                                class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                বিশেষ</div>
+                            <div>
+                                <div class="text-5xl font-bold text-red-600 mb-3">৫</div>
+                                <h4 class="text-denim font-bold text-2xl mb-4">বছরে দখল</h4>
+                                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                                    সম্পূর্ণ মালিকানা
+                                </p>
+                            </div>
+                            <div class="border-t border-red-500/30 pt-6">
+                                <p class="text-gray-500 text-xs mb-2">মিশ্র অর্থায়ন</p>
+                                <p class="text-denim font-bold text-xl">কাস্টমাইজড</p>
+                                <p class="text-gray-600 text-xs mt-3 leading-relaxed">ডাউন পেমেন্ট + কিস্তি অপশন</p>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-red-500 text-white font-bold py-2 rounded-lg hover:bg-red-600 transition">বিস্তারিত
+                                জানুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Info Row -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-denim to-black p-8 rounded-xl border border-gold/20 text-center">
+                        <div class="text-gold text-4xl mb-4"><i class="fas fa-money-bill-wave"></i></div>
+                        <h4 class="text-white font-bold text-xl mb-3">বিনা সুদে উপলব্ধ</h4>
+                        <p class="text-gray-400 text-sm">নির্বাচিত পেমেন্ট পরিকল্পনায় বিশেষ সুদমুক্ত অফার</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-denim to-black p-8 rounded-xl border border-gold/20 text-center">
+                        <div class="text-gold text-4xl mb-4"><i class="fas fa-handshake"></i></div>
+                        <h4 class="text-white font-bold text-xl mb-3">ব্যাংক ফিন্যান্সিং</h4>
+                        <p class="text-gray-400 text-sm">শীর্ষস্থানীয় ব্যাংকগুলির সাথে সহজ ঋণ প্রক্রিয়া</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-denim to-black p-8 rounded-xl border border-gold/20 text-center">
+                        <div class="text-gold text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
+                        <h4 class="text-white font-bold text-xl mb-3">স্বচ্ছ শর্তাবলী</h4>
+                        <p class="text-gray-400 text-sm">কোন লুকানো চার্জ নেই, সম্পূর্ণ আইনি সুরক্ষা</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Gallery Views Section -->
+        <section class="bg-denim py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Visualization</h2>
+                    <h3 class="text-white text-4xl md:text-5xl font-bold ">Project <span
+                            class="text-gold font-normal">Details
+                            View</span></h3>
+                    <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                        <div class="overflow-hidden h-60">
+                            <img src="https://i.ibb.co.com/NfVQc0g/4.jpg" alt="Day View"
+                                class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="py-3 text-center border-t border-gray-100">
+                            <span class="text-denim font-bold uppercase tracking-widest text-sm">Day View</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                        <div class="overflow-hidden h-60">
+                            <img src="https://i.ibb.co.com/ymsbrFBp/3.jpg" alt="Side View"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="py-3 text-center border-t border-gray-100">
+                            <span class="text-denim font-bold uppercase tracking-widest text-sm">Side View</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                        <div class="overflow-hidden h-60">
+                            <img src="https://i.ibb.co.com/ymsbrFBp/3.jpg" alt="Evening View"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="py-3 text-center border-t border-gray-100">
+                            <span class="text-denim font-bold uppercase tracking-widest text-sm">Evening View</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                        <div class="overflow-hidden h-60">
+                            <img src="https://i.ibb.co.com/vvfDT0g9/16.jpg" alt="Top View"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="py-3 text-center border-t border-gray-100">
+                            <span class="text-denim font-bold uppercase tracking-widest text-sm">Top View</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                        <div class="overflow-hidden h-60">
+                            <img src="https://i.ibb.co.com/N2qbHN64/2.jpg" alt="Fountain View"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="py-3 text-center border-t border-gray-100">
+                            <span class="text-denim font-bold uppercase tracking-widest text-sm">Fountain View</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                        <div class="overflow-hidden h-60">
+                            <img src="https://i.ibb.co.com/Fkg30SxD/8.jpg" alt="Reception Area"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="py-3 text-center border-t border-gray-100">
+                            <span class="text-denim font-bold uppercase tracking-widest text-sm">Reception Area</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Master Plan Section -->
+        <section class="bg-dark py-24 px-4 border-y border-gray-800">
+            <div class="max-w-5xl mx-auto text-center mb-16">
+                <h2 class="text-white text-5xl font-bold mb-4 ">The <span
+                        class="text-gold underline decoration-1 underline-offset-8">Master Plan</span></h2>
+                <p class="text-gray-400">A visionary layout designed for modern community living with 40% open green
+                    space.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto">
+                <div class="relative group overflow-hidden rounded-3xl border border-gold/30">
+                    <img src="https://i.ibb.co.com/0pXttLLm/Floor-plan.png" alt="Master Plan"
+                        class="w-full h-auto  transition duration-1000">
+                    <!-- <div class="absolute inset-0 flex items-center justify-center ">
+                                <button
+                                    class="bg-gold text-white px-10 py-4 rounded-full font-black uppercase tracking-tighter hover:scale-110 transition shadow-xl">Explore
+                                    Master Map</button>
+                            </div> -->
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Floor Plan Section -->
+        <section class="bg-dark py-24 px-4 border-y border-gray-800">
+            <div class="max-w-5xl mx-auto text-center mb-16">
+                <h2 class="text-white text-5xl font-bold mb-4 "> <span
+                        class="text-gold underline decoration-1 underline-offset-8">Floor Plan</span></h2>
+                <p class="text-gray-400">A visionary layout designed for modern community living with 40% open green
+                    space.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto">
+                <div class="relative group overflow-hidden rounded-3xl border border-gold/30">
+                    <img src="https://i.ibb.co.com/ycSdd0gr/image.png" alt="Floor Plan"
+                        class="w-full h-auto  transition duration-1000">
+                    <!-- <div
+                                class="absolute inset-0 flex items-center justify-center ">
+                                <button
+                                    class="bg-gold text-white px-10 py-4 rounded-full font-black uppercase tracking-tighter hover:scale-110 transition shadow-xl">Explore
+                                    Master Map</button>
+                            </div> -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Investment Highlights Section -->
+        <section class="bg-white py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Returns</h2>
+                    <h3 class="text-denim text-4xl md:text-5xl font-bold mb-4">Investment <span
+                            class="text-gold">Highlights</span></h3>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gradient-to-br from-denim to-black p-8 rounded-xl border border-gold/20">
+                        <h4 class="text-gold text-2xl font-bold mb-4">Capital Appreciation</h4>
+                        <p class="text-gray-300 mb-6">Prime location in Banani ensures consistent property value growth
+                            with projected 8-12% annual appreciation over the next 5 years.</p>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-gold">12%</span>
+                            <span class="text-gray-400">Average yearly growth</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-denim to-black p-8 rounded-xl border border-gold/20">
+                        <h4 class="text-gold text-2xl font-bold mb-4">Rental Income Potential</h4>
+                        <p class="text-gray-300 mb-6">High rental demand in the area with potential monthly returns of
+                            0.75-1.25% of property value, providing steady passive income.</p>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-gold">12-15%</span>
+                            <span class="text-gray-400">Annual rental ROI</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-denim to-black p-8 rounded-xl border border-gold/20">
+                        <h4 class="text-gold text-2xl font-bold mb-4">Limited Units</h4>
+                        <p class="text-gray-300 mb-6">With only 750+ units in a sprawling 12.5-acre development,
+                            exclusivity ensures better property appreciation and rental values.</p>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-gold">750+</span>
+                            <span class="text-gray-400">Units only</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-denim to-black p-8 rounded-xl border border-gold/20">
+                        <h4 class="text-gold text-2xl font-bold mb-4">Premium Developer</h4>
+                        <p class="text-gray-300 mb-6">Backed by NRB Group with decades of real estate expertise and
+                            proven track record of successful residential projects.</p>
+                        <div class="text-gold font-bold">NRB Group - Est. 1990</div>
+                    </div>
+                </div>
+
+                <div class="bg-gold/10 border border-gold/30 rounded-xl p-8 text-center">
+                    <h4 class="text-denim text-2xl font-bold mb-3">Projected 5-Year ROI</h4>
+                    <p class="text-gray-700 mb-4">Based on conservative market estimates and historical appreciation
+                        patterns</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div>
+                            <div class="text-3xl font-bold text-gold mb-2">40-60%</div>
+                            <p class="text-gray-600 text-sm">Capital Appreciation</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-gold mb-2">60-75%</div>
+                            <p class="text-gray-600 text-sm">Rental Income Returns</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-gold mb-2">100-135%</div>
+                            <p class="text-gray-600 text-sm">Total Potential Returns</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability & Green Building Section -->
+        <section class="bg-denim py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 animate-text-up">
+                    <h2 class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-3">Environment</h2>
+                    <h3 class="text-white text-4xl md:text-5xl font-bold mb-4">Sustainability & <span
+                            class="text-gold">Green Living</span></h3>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                            NRB Residence is committed to sustainable development and environmental responsibility. Our
+                            green building design incorporates cutting-edge eco-friendly technologies to minimize
+                            environmental impact while maximizing resident comfort and well-being.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-3xl"><i class="fas fa-sun"></i></span>
+                                <div>
+                                    <h5 class="text-white font-bold mb-1">Renewable Energy</h5>
+                                    <p class="text-gray-400 text-sm">Solar panel systems on roofs for sustainable energy
+                                        generation</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-3xl"><i class="fas fa-droplet"></i></span>
+                                <div>
+                                    <h5 class="text-white font-bold mb-1">Water Conservation</h5>
+                                    <p class="text-gray-400 text-sm">Rainwater harvesting and greywater recycling
+                                        systems</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-3xl"><i class="fas fa-leaf"></i></span>
+                                <div>
+                                    <h5 class="text-white font-bold mb-1">Green Landscaping</h5>
+                                    <p class="text-gray-400 text-sm">Native plants and sustainable gardening practices
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-gold text-3xl"><i class="fas fa-wind"></i></span>
+                                <div>
+                                    <h5 class="text-white font-bold mb-1">Natural Ventilation</h5>
+                                    <p class="text-gray-400 text-sm">Cross-ventilation design reduces energy consumption
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 border border-gold/20">
+                        <h4 class="text-gold text-2xl font-bold mb-6">Green Certifications</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800 p-4 rounded-lg border border-gold/30 hover:border-gold transition">
+                                <h5 class="text-white font-bold mb-1">BREEAM Certification</h5>
+                                <p class="text-gray-400 text-sm">Building Research Establishment Environmental
+                                    Assessment Method</p>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg border border-gold/30 hover:border-gold transition">
+                                <h5 class="text-white font-bold mb-1">Energy Efficiency Rating</h5>
+                                <p class="text-gray-400 text-sm">Designed for reduced operational carbon footprint</p>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg border border-gold/30 hover:border-gold transition">
+                                <h5 class="text-white font-bold mb-1">Waste Management</h5>
+                                <p class="text-gray-400 text-sm">Complete waste segregation and recycling systems</p>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg border border-gold/30 hover:border-gold transition">
+                                <h5 class="text-white font-bold mb-1">Smart Infrastructure</h5>
+                                <p class="text-gray-400 text-sm">IoT systems for efficient resource management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA & Contact Section -->
+        <section class="bg-gradient-to-r from-gold to-gold/80 py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">Ready to Invest in Your Future?</h2>
+                <p class="text-black/80 text-lg mb-10 max-w-2xl mx-auto">
+                    Join hundreds of satisfied investors who have chosen NRB Residence. Limited units available. Contact
+                    us today to secure your premium home or investment.
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="contact.html"
+                        class="bg-black text-gold px-10 py-4 rounded-full font-bold uppercase tracking-[0.2em] hover:bg-denim transition inline-block">
+                        Schedule a Site Visit
+                    </a>
+                    <a href="brochure.html"
+                        class="bg-black/20 backdrop-blur-sm text-black px-10 py-4 rounded-full font-bold uppercase tracking-[0.2em] hover:bg-black/40 transition inline-block border-2 border-black">
+                        Download Brochure
+                    </a>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                        <h4 class="text-black font-bold mb-3 text-lg">Quick Contact</h4>
+                        <p class="text-black/80 text-sm mb-3">Speak with our sales team today</p>
+                        <a href="tel:+8802222275895" class="text-black font-bold hover:underline">+880-2222275895</a>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                        <h4 class="text-black font-bold mb-3 text-lg">Email Inquiry</h4>
+                        <p class="text-black/80 text-sm mb-3">Send us your inquiry</p>
+                        <a href="mailto:info@nrbresidence.com"
+                            class="text-black font-bold hover:underline">info@nrbresidence.com</a>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                        <h4 class="text-black font-bold mb-3 text-lg">Visit Us</h4>
+                        <p class="text-black/80 text-sm mb-3">Location: Level-12, Ahmed Tower</p>
+                        <p class="text-black font-bold text-sm">28 & 30, Kemal Ataturk Ave, Banani</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer section  -->
+
+        <footer class="bg-white text-black pt-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+
+                    <div class="space-y-6">
+
+                        <h4 class="text-xl font-bold tracking-tight text-gold">Office Location</h4>
+                        <div class="space-y-4 text-sm text-black">
+                            <p class="leading-relaxed flex gap-3">
+                                <i class="fas fa-location-dot  mt-1"></i>
+                                <span class="">Level-12, Ahmed Tower, 28 & 30, Kemal Ataturk
+                                    Avenue, Banani, Dhaka-1213</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fas fa-phone "></i>
+                                <span class="">+8802222275895</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fas fa-envelope "></i>
+                                <span class="">info@nrbresidence.com</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-8 relative text-gold">
+                            Navigation
+                            <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                        </h4>
+                        <ul class="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+                            <li><a href="#" class="footer-link"></i> Home</a>
+                            </li>
+                            <li><a href="#" class="footer-link"></i>
+                                    Brochure</a></li>
+                            <li><a href="#" class="footer-link"></i> About
+                                    Us</a></li>
+                            <li><a href="#" class="footer-link"></i> How to
+                                    Buy</a></li>
+                            <li><a href="#" class="footer-link"></i> Why NRB</a>
+                            </li>
+                            <li><a href="#" class="footer-link"></i> FAQ's</a>
+                            </li>
+                            <li><a href="#" class="footer-link"></i>
+                                    Projects</a></li>
+                            <li><a href="#" class="footer-link"></i> Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-8 relative text-gold">
+                            Our Offices
+                            <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="office-card group">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <i class="fas fa-building text-primary"></i>
+                                    <span class="font-semibold ">Corporate Office</span>
+                                </div>
+                                <p class="text-xs  pl-7">Kemal Ataturk Avenue, Banani, Dhaka-1213.</p>
+                            </div>
+                            <div class="office-card group">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <i class="fas fa-house-chimney text-primary"></i>
+                                    <span class="font-semibold ">Branch Office</span>
+                                </div>
+                                <p class="text-xs  pl-7">Block-E, Banani, Dhaka-1213.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-xs ">
+                        2026 &copy; <span class="">NRB Residence</span>. All Rights Reserved | Developed
+                        by <a href="#" class="text-sky-500 font-bold hover:underline">Techsolutions</a>
+                    </p>
+
+                    <div class="flex items-center gap-3">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-facebook-f text-white hover:text-black text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in text-white hover:text-black text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                            <i class="fab fa-youtube text-white hover:text-black text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+    </main>
+
+
+    <!-- project slider script  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+
+    <script>
+        // Get current page URL
+        const activePage = window.location.pathname;
+
+        document.querySelectorAll('#navbar a').forEach(link => {
+            // If the link's href matches the current URL
+            if (link.href.includes(`${activePage}`)) {
+                link.classList.add('text-white', 'border-b-2', 'border-white', 'pb-1');
+            } else {
+                link.classList.add('text-white', 'hover:text-none');
+            }
+        });
+    </script>
+
+    <script>
+        // --- NAVBAR STICKY LOGIC ---
+        const navbar = document.getElementById('navbar');
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 50) {
+        //         navbar.classList.add('bg-gold/90', 'py-10', 'shadow-2xl');
+        //         navbar.classList.remove('py-10', 'bg-gradient-to-b');
+        //     } else {
+        //         navbar.classList.remove('bg-gold/90', 'py-10', 'shadow-2xl');
+        //         navbar.classList.add('py-10', 'bg-gradient-to-b');
+        //     }
+        // });
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Sticky mode: maintain consistent padding and background
+                navbar.classList.add('bg-gold/95', 'shadow-2xl');
+                navbar.classList.remove('bg-gradient-to-b', 'from-black/80', 'to-transparent');
+            } else {
+                // Normal mode: restore original gradient
+                navbar.classList.remove('bg-gold/95', 'shadow-2xl');
+                navbar.classList.add('bg-gradient-to-b', 'from-black/80', 'to-transparent');
+            }
+        });
+        // --- SLIDER LOGIC ---
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentIdx = 0;
+        let isTransitioning = false;
+        const intervalTime = 5000;
+        let slideTimer;
+
+        function updateSlides(targetIdx) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i < targetIdx) {
+                    slide.style.transform = 'translateX(-100%)';
+                } else if (i > targetIdx) {
+                    slide.style.transform = 'translateX(100%)';
+                } else {
+                    slide.style.transform = 'translateX(0)';
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('opacity-100', i === targetIdx);
+                dot.classList.toggle('scale-125', i === targetIdx);
+                dot.classList.toggle('opacity-40', i !== targetIdx);
+                dot.classList.toggle('shadow-[0_0_10px_rgba(255,255,255,0.8)]', i === targetIdx);
+            });
+
+            currentIdx = targetIdx;
+            setTimeout(() => { isTransitioning = false; }, 800);
+        }
+
+        function nextSlide() {
+            let next = (currentIdx + 1) % slides.length;
+            updateSlides(next);
+        }
+
+        function jumpToSlide(idx) {
+            clearInterval(slideTimer);
+            updateSlides(idx);
+            startAutoPlay();
+        }
+
+        function startAutoPlay() {
+            slideTimer = setInterval(nextSlide, intervalTime);
+        }
+
+        // --- MENU TOGGLE ---
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+        function toggleMenu() {
+            menuOverlay.classList.toggle('translate-x-full');
+        }
+
+        // Initialize positions
+        slides.forEach((slide, i) => {
+            if (i > 0) slide.style.transform = 'translateX(100%)';
+        });
+        startAutoPlay();
+    </script>
+</body>
+
+</html>
