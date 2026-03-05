@@ -25,6 +25,7 @@
                         gold: '#C5A059',
                         dark: '#1a1a1a',
                         denim: '#181D24',
+                        maincolor: '#246186',
                     },
                     animation: {
                         'text-up': 'textUp 1s ease-out forwards',
@@ -417,6 +418,30 @@
                     </h1>
                 </div>
             </div>
+
+            <!-- search section  -->
+            <div class="absolute z-50 inline-block text-left font-sans bottom-0 left-2 md:bottom-28 md:left-20">
+                <div class="flex items-stretch shadow-lg">
+            
+                    <select name="apartment"
+                        aria-placeholder="Country"
+                        class="bg-maincolor text-white px-6 py-4 flex items-center justify-between min-w-[200px]  transition-all cursor-pointer outline-none">
+                        <option value="" disabled selected> Country</option>
+                        <option value="1">Bangladesh</option>
+                        <option value="2">Dubai</option>
+                        
+                    </select>
+            
+                    <button class="bg-[#4a90e2] text-white px-8 py-4 flex items-center gap-2 hover:bg-[#357abd] transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <span class=" uppercase tracking-widest text-sm">Search</span>
+                    </button>
+                </div>
+            </div>
+
         </section>
 
 
@@ -433,6 +458,20 @@
                 <div class="next-arrow"><i class="fa-solid fa-chevron-right text-sm md:text-base"></i></div>
         
                 <div class="excellence-slider">
+
+                    <div class="outline-none">
+                        <a href="project-details-1.html">
+                            <div class="overflow-hidden rounded-sm">
+                                <img src="https://i.ibb.co.com/MD7JKgg5/Screenshot-2.png" alt="NRB Residence - Mirzapur"
+                                    class="w-full h-[350px] md:h-[500px] object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="text-lg md:text-xl font-medium text-gray-800">NRB Residence - Gulshan</h3>
+                                <p class="text-xs md:text-sm text-gray-500 uppercase tracking-wider">Gulshan, Dhaka
+                                </p>
+                            </div>
+                        </a>
+                    </div>
         
                     <div class="outline-none">
                         <a href="project-details-1.html">
@@ -448,19 +487,7 @@
                         </a>
                     </div>
         
-                    <div class="outline-none">
-                        <a href="project-details-1.html">
-                        <div class="overflow-hidden rounded-sm">
-                            <img src="https://i.ibb.co.com/4nj0d3gs/Gemini-Generated-Image-cn12mtcn12mtcn12.png" alt="NRB Residence - mawa"
-                                class="w-full h-[350px] md:h-[500px] object-cover hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="text-lg md:text-xl font-medium text-gray-800">NRB Residence - Mawa</h3>
-                            <p class="text-xs md:text-sm text-gray-500 uppercase tracking-wider">Dhaka Mawa Highway</p>
-                        </div>
-                        </a>
-                    </div>
-        
+                    
                     <div class="outline-none">
                         <a href="project-details-1.html">
                         <div class="overflow-hidden rounded-sm">
@@ -1174,10 +1201,7 @@
                                     Projects</a></li>
                             <li><a href="#" class="footer-link"></i> Contact
                                     Us</a></li>
-                            <li><a href="project-details-1.html" class="footer-link"></i> Project Details 1
-                            </a></li>
-                            <li><a href="project-details-2.html" class="footer-link"></i> Project Details 2</a></li>
-                            <li><a href="project-details-3.html" class="footer-link"></i> Project Details 3</a></li>
+                            
                         </ul>
                     </div>
         
@@ -1371,6 +1395,10 @@
         });
         startAutoPlay();
     </script>
+
+
+
+
 </body>
 
 </html>
