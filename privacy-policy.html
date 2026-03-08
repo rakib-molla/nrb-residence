@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NRB Residence </title>
+    <title>NRB Residence || Privacy-Policy</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -64,21 +64,14 @@
             background-color: #FFFFFF !important;
         }
 
-        .slide {
-            position: absolute;
-            inset: 0;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        /* slider style start  */
 
-        .slide-content {
-            opacity: 0;
-            transition: opacity 0.5s ease-in 0.4s;
-        }
 
-        .slide.active .slide-content {
-            opacity: 1;
-            animation: textUp 1s ease-out forwards 0.4s;
-        }
+
+
+
+
+        /* slider style end  */
 
         #mobile-menu-overlay {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -105,62 +98,21 @@
 
         /* project slider custom styles */
 
-        .slick-track {
-            display: flex !important;
-            align-items: end !important;
-            align-items: flex-end !important;
+        /* hero section style start  */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+            z-index: 0;
         }
 
-        .slick-slide {
-            height: inherit !important;
-            padding: 0 10px;
-            outline: none;
-        }
+        /* hero section style end */
 
-        .slick-list {
-            margin: 0 -10px;
-            padding-top: 50px !important;
-            padding-bottom: 50px !important;
-        }
-
-        /* Tablet view: 768px - 1024px */
-        @media (max-width: 1024px) and (min-width: 768px) {
-            .slick-slide {
-                padding: 0 8px;
-            }
-
-            .slick-list {
-                margin: 0 -8px;
-                padding-top: 40px !important;
-                padding-bottom: 40px !important;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .slick-slide {
-                padding: 0 5px;
-            }
-
-            .slick-list {
-                margin: 0 -5px;
-                padding-top: 30px !important;
-                padding-bottom: 30px !important;
-            }
-        }
-
-
-        .slider-card {
-            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
-            transform: scale(0.8);
-            opacity: 0.5;
-            transform-origin: bottom center;
-            width: 100%;
-        }
-
-        .slick-current .slider-card {
-            transform: scale(1);
-            opacity: 1;
-        }
 
         /* Project Section Responsive */
         .project-section {
@@ -217,16 +169,6 @@
                 margin-top: 20px;
             }
         }
-
-        /* Tablet button sizing */
-        @media (max-width: 1024px) and (min-width: 768px) {
-
-            #prevBtn,
-            #nextBtn {
-                width: 3rem;
-                height: 3rem;
-            }
-        }
     </style>
 </head>
 
@@ -236,35 +178,36 @@
         <header>
             <nav id="navbar"
                 class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 lg:py-5 px-6 md:px-10 lg:px-12 flex items-center justify-between  border-white/10 bg-gradient-to-b from-black/80 to-transparent">
-        
+
                 <div class="flex flex-column tracking-[0.2em] items-start md:items-center">
                     <a href="index.html">
-                        <img src="https://i.ibb.co.com/VYwysF2j/NRB-Logo-white.png" class="h-10 md:h-14 mb-1" alt="Logo">
+                        <img src="https://i.ibb.co.com/VYwysF2j/NRB-Logo-white.png" class="h-10 md:h-14 mb-1"
+                            alt="Logo">
                     </a>
-        
+
                 </div>
-        
+
                 <div
                     class="hidden md:flex relative md:absolute md:left-1/2 md:-translate-x-1/2 flex-row flex-1 md:space-x-6 lg:space-x-8 text-xs uppercase items-start md:items-center font-sans">
-        
+
                     <a href="index.html" class="group relative nav-link transition-colors pb-1 text-white ">
                         Home
                         <span
                             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
                     </a>
-        
+
                     <a href="aboutus.html" class="group relative nav-link transition-colors pb-1 text-white ">
                         About Us
                         <span
                             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
                     </a>
-        
+
                     <a href="projects.html" class="group relative nav-link transition-colors pb-1 text-white ">
                         Projects
                         <span
                             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
                     </a>
-        
+
                     <a href="contact.html" class="group relative nav-link transition-colors pb-1 text-white ">
                         Contact
                         <span
@@ -275,52 +218,59 @@
                         <span
                             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
                     </a>
-        
-        
+                    <a href="brochure.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        Brochure
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+                    <a href="brochure.html" class="group relative nav-link transition-colors pb-1 text-white ">
+                        How To Buy
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </a>
                     <a href="faq.html" class="group relative nav-link transition-colors pb-1 text-white ">
                         Faq's
                         <span
                             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
                     </a>
-        
+
                 </div>
-        
+
                 <div class="flex flex-1 justify-end items-center space-x-4 md:space-x-6 lg:space-x-8">
                     <!-- <a href="contact.html"
-                                    class="hidden lg:block text-xs uppercase tracking-[0.2em] transition-colors">Contact</a> -->
-        
+                        class="hidden lg:block text-xs uppercase tracking-[0.2em] transition-colors">Contact</a> -->
+
                     <button onclick="toggleMenu()"
-                        class="flex items-center space-x-2 md:space-x-3 border border-white/40 rounded-full px-4 md:px-5 py-2 hover:bg-white hover:text-black text-white transition-all group text-[10px] md:text-[10px]">
+                        class="flex items-center space-x-2 md:space-x-3 border border-white/40 rounded-full px-4 md:px-5 py-2 hover:bg-white hover:text-black transition-all group text-[10px] md:text-[10px]">
                         <span class="uppercase text-[10px] tracking-[0.2em] font-bold">Menu</span>
                         <div class="w-5 flex flex-col space-y-1">
                             <span class="h-[1px] w-full bg-current"></span>
                             <span class="h-[1px] w-3/4 bg-current"></span>
                         </div>
                     </button>
-        
+
                     <!-- <button
-                                class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:border-gold hover:text-gold transition-all">
-                                <i class="fa-solid fa-magnifying-glass text-sm"></i>
-                            </button> -->
+                    class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:border-gold hover:text-gold transition-all">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button> -->
                 </div>
             </nav>
             <div id="mobile-menu-overlay"
-                class="fixed inset-0 text-white bg-dark/95 z-[60] transform translate-x-full flex flex-col items-center justify-center">
+                class="fixed inset-0 bg-dark/95 z-[60] transform translate-x-full flex flex-col items-center justify-center">
                 <button onclick="toggleMenu()" class="absolute top-10 right-10 text-3xl hover:text-gold">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 <div class="text-center space-y-8">
-                    <a href="index.html" class="block text-white font- text-5xl hover:text-gold ">Home</a>
-                    <a href="aboutus.html" class="block  text-white font- text-5xl hover:text-gold ">About Us</a>
-                    <a href="projects.html" class="block text-white font- text-5xl hover:text-gold ">Projects</a>
-                    <a href="contact.html" class="block text-white font- text-5xl hover:text-gold ">Contact</a>
-                    <a href="whynrb.html" class="block text-white font- text-5xl hover:text-gold ">Why Nrb</a>
-                    <a href="faq.html" class="block text-white font- text-5xl hover:text-gold">Faq</a>
+                    <a href="index.html" class="block font- text-5xl hover:text-gold ">Home</a>
+                    <a href="aboutus.html" class="block font- text-5xl hover:text-gold ">About Us</a>
+                    <a href="projects.html" class="block font- text-5xl hover:text-gold ">Projects</a>
+                    <a href="contact.html" class="block font- text-5xl hover:text-gold ">Contact</a>
+                    <a href="brochure.html" class="block font- text-5xl hover:text-gold ">Company Profile</a>
+                    <a href="faq.html" class="block font- text-5xl hover:text-gold">Faq</a>
                 </div>
             </div>
         </header>
 
-        
 
         <!-- bg section  -->
         <section class="bg-denim py-28 text-center relative overflow-hidden">
@@ -328,105 +278,103 @@
                 <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=2000"
                     alt="pattern">
             </div>
-            <div class="relative z-10 px-6 mb-4">
-                <!-- <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">About Us</h1> -->
-                
-            </div>
-        </section>
-
-
-        <!-- about section  -->
-        <section class="w-full bg-white overflow-hidden">
-            <div class="mx-auto grid w-full grid-cols-1 md:grid-cols-2">
-        
-                <!-- Left Content -->
-                <div class="flex flex-col justify-center px-6 py-12 sm:px-10 md:px-16 lg:px-24">
-                    
-                    <h2 class="mb-6 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
-                        About Us
-                    </h2>
-        
-                    <p class="mb-8 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
-                        NRB Residence is a new kind of real estate platform in Dhaka, created to make owning land or an apartment easier and
-                        more accessible for everyone. We offer plots and beautifully located apartments at prices people can realistically
-                        afford. Anyone can explore and buy their property through a simple digital process, without long paperwork or
-                        complicated steps.
-                        <br> <br>
-                        Our residential projects are designed for comfortable living with all the essential digital services that modern
-                        families expect. With installment plans starting from only BDT 10,000, we make it possible for more people to begin
-                        their journey toward owning a home. We take legal matters very seriously and ensure every plot is fully verified and
-                        safe to purchase. Most importantly, we are committed to delivering your property on time.
-                        
-                    </p>
-        
-                    
-                </div>
-        
-                <!-- Right Image -->
-                <div class="w-full">
-                    <div class="">
-                        <img src="https://demo.nrbresidence.com/assets/web/images/bg/DR_03.jpg" alt="Abstract workspace"
-                            class="h-full w-full object-cover " />
-                    </div>
-                </div>
+            <div class="relative z-10 px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">Privacy policy</h1>
         
             </div>
         </section>
 
-
-        <!-- mission vision  -->
-        <section class="bg-slate-50 py-16 px-6 md:py-24">
-            <div class="max-w-6xl mx-auto">
-
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#C5A059] mb-4 uppercase tracking-widest">Purpose
-                    </h2>
-                    <div class="h-1 w-20 bg-[#C5A059] mx-auto"></div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                    <div
-                        class="group bg-[#181D24] p-8 md:p-12 rounded-2xl border border-gray-800 hover:border-[#C5A059] transition-all duration-300 shadow-xl">
-                        <div class="flex items-center mb-6">
-                            <div class="p-3 bg-[#C5A059]/10 rounded-lg mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#C5A059]" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-semibold text-white">Mission</h3>
-                        </div>
-                        <p class="text-gray-200 text-justify leading-relaxed ">
-                            Our mission is to make premium holiday home ownership accessible through transparent and
-                            flexible co-ownership and timeshare solutions. We are comitted to "Crafting Timeless Assets,
-                            Not Just Homes', ensuring your investment aerves as a benchmark for luxury and long-term
-                            value.
+        <!-- privacy policy section  -->
+        <section class="bg-white text-black pt-16 ">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="space-y-12">
+        
+                    <div>
+                        <h2 class="text-3xl font-bold text-gold mb-6 uppercase tracking-wider">Foundation of Privacy</h2>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            At <span class="font-bold text-black">NRB Residence</span>, we believe that trust is the cornerstone
+                            of every architectural masterpiece. Just as we prioritize structural integrity in our apartments, we
+                            are committed to safeguarding the digital "blueprints" of your personal information. This Privacy
+                            Policy outlines how we collect, protect, and utilize your data when you engage with our portfolio of
+                            premium properties.
                         </p>
                     </div>
-
-                    <div
-                        class="group bg-[#181D24] p-8 md:p-12 rounded-2xl border border-gray-800 hover:border-[#C5A059] transition-all duration-300 shadow-xl">
-                        <div class="flex items-center mb-6">
-                            <div class="p-3 bg-[#C5A059]/10 rounded-lg mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#C5A059]" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-semibold text-white"> Vision</h3>
+        
+                    <div>
+                        <h3 class="text-xl font-bold text-black border-l-4 border-gold pl-4 mb-6">Information Gathering &
+                            Specifications</h3>
+                        <p class="text-gray-700 mb-4">To provide a bespoke experience while browsing our residences, we may
+                            collect the following "site-specific" data:</p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-gold mt-1"></i>
+                                <span><strong>Personal Identity:</strong> Name, email address, and contact details provided via
+                                    inquiry forms.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-gold mt-1"></i>
+                                <span><strong>Investment Profile:</strong> Preferred apartment configurations, budget ranges,
+                                    and floor plan interests.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-gold mt-1"></i>
+                                <span><strong>Technical Footprint:</strong> IP address and browsing behavior to optimize our
+                                    digital interface.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-gold mt-1"></i>
+                                <span><strong>Communication Logs:</strong> Records of your consultations with our sales and
+                                    architectural teams.</span>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div>
+                        <h3 class="text-xl font-bold text-black border-l-4 border-gold pl-4 mb-6">How We Utilize Your Data</h3>
+                        <p class="text-gray-700 mb-4">Your information serves as the framework for improving our service
+                            delivery:</p>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                            <p class="text-sm text-gray-600 leading-loose">
+                                <strong class="text-black">Personalized Portfolios:</strong> Tailoring property recommendations
+                                to match your lifestyle.<br>
+                                <strong class="text-black">Consultation Management:</strong> Scheduling site visits and floor
+                                plan walkthroughs.<br>
+                                <strong class="text-black">Architectural Updates:</strong> Informing you of new project
+                                launches, construction milestones, and finishing options.<br>
+                                <strong class="text-black">Structural Improvements:</strong> Enhancing our website’s UI/UX based
+                                on user interaction data.
+                            </p>
                         </div>
-                        <p class="text-gray-200 text-justify leading-relaxed">
-                            To become the global benchmark for excellence in our industry. We envision a future where
-                            our strategic insights and creative execution set the standard for quality, integrity, and
-                            lasting impact.
+                    </div>
+        
+                    <div>
+                        <h3 class="text-xl font-bold text-black border-l-4 border-gold pl-4 mb-6">Structural Security</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            We implement industry-standard "reinforcements" to prevent unauthorized access to your data. Much
+                            like the gated security of an <span class="text-gold font-semibold">NRB Residence</span>, your
+                            digital information is protected by encrypted layers and secure server protocols. However, please be
+                            advised that no "digital envelope" is entirely impenetrable, and we encourage users to maintain
+                            their own security hygiene.
                         </p>
                     </div>
-
+        
+                    <div>
+                        <h3 class="text-xl font-bold text-black border-l-4 border-gold pl-4 mb-6">Digital "Cookies" & Tracking
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Our website utilizes cookies to remember your aesthetic preferences and search history. These small
+                            files act as a memory for your browser, ensuring that when you return to <span class="italic">NRB
+                                Residence</span>, your previous search parameters for luxury living are preserved.
+                        </p>
+                    </div>
+        
+                    <div class="pt-8 border-t border-gray-200">
+                        <p class="text-sm text-gray-500 italic">
+                            Last updated: March 2026. For inquiries regarding your data "blueprints," please contact our
+                            administrative office at <span class="text-gold">privacy@nrbresidence.com</span>.
+                        </p>
+                    </div>
+        
                 </div>
             </div>
         </section>
@@ -434,13 +382,13 @@
 
 
         <!-- footer section  -->
-        <footer class="bg-white text-black pt-10">
+        <footer class="bg-white text-black pt-16">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-5">
-        
-                    <div class="space-y-3">
-        
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+
+                    <div class="space-y-6">
+
                         <h4 class="text-xl font-bold tracking-tight text-gold">Office Location</h4>
                         <div class="space-y-4 text-sm text-black">
                             <p class="leading-relaxed flex gap-3">
@@ -458,42 +406,38 @@
                             </p>
                         </div>
                     </div>
-        
+
                     <div>
-                        <h4 class="text-lg font-bold mb-5 relative text-gold">
+                        <h4 class="text-lg font-bold mb-8 relative text-gold">
                             Navigation
                             <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
                         </h4>
-                        <ul class="grid grid-cols-2 gap-y-3 gap-x-2 text-sm">
-                            <li><a href="index.html" class="footer-link"></i> Home</a>
+                        <ul class="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+                            <li><a href="#" class="footer-link"></i> Home</a>
                             </li>
                             <li><a href="#" class="footer-link"></i>
                                     Brochure</a></li>
-                            <li><a href="aboutus.html" class="footer-link"></i> About
+                            <li><a href="#" class="footer-link"></i> About
                                     Us</a></li>
                             <li><a href="#" class="footer-link"></i> How to
                                     Buy</a></li>
-                            <li><a href="whynrb.html" class="footer-link"></i> Why NRB</a>
+                            <li><a href="#" class="footer-link"></i> Why NRB</a>
                             </li>
-                            <li><a href="faq.html" class="footer-link"></i> FAQ's</a>
+                            <li><a href="#" class="footer-link"></i> FAQ's</a>
                             </li>
-                            <li><a href="projects.html" class="footer-link"></i>
+                            <li><a href="#" class="footer-link"></i>
                                     Projects</a></li>
-                            <li><a href="contact.html" class="footer-link"></i> Contact
+                            <li><a href="#" class="footer-link"></i> Contact
                                     Us</a></li>
-                            <li><a href="privacy-policy.html" class="footer-link"></i> Privacy
-                                    Policy</a></li>
-                            <li><a href="terms-and-conditions.html" class="footer-link"></i> Terms & Conditions</a></li>
-        
                         </ul>
                     </div>
-        
+
                     <div>
-                        <h4 class="text-lg font-bold mb-5 relative text-gold">
+                        <h4 class="text-lg font-bold mb-8 relative text-gold">
                             Our Offices
                             <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
                         </h4>
-                        <div class="space-y-3">
+                        <div class="space-y-6">
                             <div class="office-card group">
                                 <div class="flex items-center gap-3 mb-1">
                                     <i class="fas fa-building text-primary"></i>
@@ -511,13 +455,14 @@
                         </div>
                     </div>
                 </div>
-        
-                <div class="border-t border-slate-800 py-3 flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <div
+                    class="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p class="text-xs ">
                         2026 &copy; <span class="">NRB Residence</span>. All Rights Reserved | Developed
                         by <a href="#" class="text-sky-500 font-bold hover:underline">Techsolutions</a>
                     </p>
-        
+
                     <div class="flex items-center gap-3">
                         <a href="#"
                             class="w-10 h-10 rounded-full bg-navyLight flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
@@ -535,7 +480,9 @@
                 </div>
             </div>
         </footer>
-        
+
+
+
     </main>
 
 
@@ -543,51 +490,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('.main-slider').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                arrows: false,
-                dots: false,
-                cssEase: 'cubic-bezier(0.2, 1, 0.3, 1)',
-                speed: 1000,
-                // --- Auto Play Settings ---
-                autoplay: true,
-                autoplaySpeed: 800,
-                pauseOnHover: true,
-                pauseOnFocus: true,
-                responsive: [
-                    {
-                        breakpoint: 1280,
-                        settings: { slidesToShow: 3 }
-                    },
-                    {
-                        breakpoint: 1024,
-                        settings: { slidesToShow: 2.3, centerMode: false }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: { slidesToShow: 1.6, centerMode: false }
-                    },
-                    {
-                        breakpoint: 640,
-                        settings: { slidesToShow: 1, centerMode: false, centerPadding: '0px' }
-                    },
-                    {
-                        breakpoint: 375,
-                        settings: {
-                            slidesToShow: 1, centerMode: false, centerPadding: '0px'
-                        }
-                    }
-                ]
-            });
 
-            $('#nextBtn').click(function () { $('.main-slider').slick('slickNext'); });
-            $('#prevBtn').click(function () { $('.main-slider').slick('slickPrev'); });
-        });
-    </script>
 
 
     <script>
