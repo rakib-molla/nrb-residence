@@ -185,6 +185,13 @@
         }
         
         /* custom text style end */
+
+        /* dropdown active color start  */
+        .active-blue{
+            background-color:#C5A059; /* blue */
+            color:#fff !important;
+        }
+        /* dropdown active color end  */
         
 
         /* project slider start  */
@@ -415,28 +422,42 @@
             <!-- class="absolute z-20 inline-block text-left font-sans bottom-0 left-2 md:bottom-28 md:left-20" -->
             <div 
                 class="absolute z-20 inline-block text-left font-sans 
-                bottom-6 left-1/2 -translate-x-1/2
+                bottom-28 left-1/2 -translate-x-1/2
                 md:bottom-28 md:left-20 md:translate-x-0"
             >
-                <div class="flex items-stretch shadow-lg">
-            
-                    <select name="apartment"
-                        aria-placeholder="Country"
-                        class="bg-maincolor text-white px-6 py-4 flex items-center justify-between min-w-[200px]  transition-all cursor-pointer outline-none">
-                        <option value="" disabled selected> Location</option>
-                        <option value="1">Bangladesh</option>
-                        <option value="2">UAE</option>
-                        
-                    </select>
-            
-                    <button class="bg-[#4a90e2] text-white px-8 py-4 flex items-center gap-2 hover:bg-[#357abd] transition-all">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                        <span class=" uppercase tracking-widest text-sm">Search</span>
-                    </button>
+
+                <div class="">
+                    <div class="flex items-stretch shadow-lg">
+                        <button id="dropdownBtn"
+                            class="bg-[#091504] text-white px-3 py-4 flex items-center justify-between  min-w-[150px] hover:bg-white/30 transition-all">
+                            <span id="selectedDisplay" class="font-bold uppercase tracking-wider text-sm">Location</span>
+                            <svg id="arrowIcon" class="w-4 h-4 ml-2 transition-transform duration-200" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                
+                        <button class="bg-[#091504] text-white  px-4 py-4 flex items-center gap-2 hover:bg-white/30 transition-all">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            <span class="font-bold uppercase tracking-widest text-sm">Search</span>
+                        </button>
+                    </div>
+                
+                    <div id="dropdownMenu" class="hidden absolute left-0 mt-0 w-full bg-white shadow-xl z-20 p-2 border-t-0">
+                        <div class="flex items-center justify-start flex-wrap gap-1 ">
+                
+                            <button onclick="selectSingle(this, 'Bangladesh')"
+                                class="type-btn  px-4 py-2 font-bold text-xs uppercase tracking-tighter text-black">Bangladesh</button>
+                            <button onclick="selectSingle(this, 'UAE')"
+                                class="type-btn px-4 py-2 font-bold text-xs uppercase tracking-tighter  text-black">UAE</button>
+                
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
         </section>
@@ -1199,6 +1220,65 @@
         });
         startAutoPlay();
     </script>
+
+
+
+<!-- clickable search filter js start   -->
+<script>
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const arrowIcon = document.getElementById('arrowIcon');
+    const display = document.getElementById('selectedDisplay');
+
+    let selectedType = 'ANY';
+    let selectedNumbers = [];
+
+    // Toggle dropdown open/close
+    dropdownBtn.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+        arrowIcon.classList.toggle('rotate-180');
+    });
+
+    // Any ba Studio select korar logic
+    function selectSingle(element, type) {
+        selectedType = type;
+        // Remove active class from other buttons
+        document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active-blue'));
+        element.classList.add('active-blue');
+        updateUI();
+    }
+
+    // Numbers selection logic (Multi-select)
+    function toggleNumber(element, num) {
+        if (selectedNumbers.includes(num)) {
+            selectedNumbers = selectedNumbers.filter(n => n !== num);
+            element.classList.remove('selected-num');
+        } else {
+            selectedNumbers.push(num);
+            element.classList.add('selected-num');
+        }
+        updateUI();
+    }
+
+    // Display update logic
+    function updateUI() {
+        let text = selectedType;
+        if (selectedNumbers.length > 0) {
+            // Soting numbers and joining with comma
+            text = `${selectedType}: ${selectedNumbers.sort().join(', ')}`;
+        }
+        display.innerText = text;
+    }
+
+    // Close dropdown when clicking outside
+    window.onclick = function (event) {
+        if (!event.target.closest('#dropdownBtn') && !event.target.closest('#dropdownMenu')) {
+            dropdownMenu.classList.add('hidden');
+            arrowIcon.classList.remove('rotate-180');
+        }
+    }
+</script>
+<!-- clickable search filter js end  -->
 
 
 
